@@ -1757,9 +1757,261 @@ Employees</h1>
 <h2>0. Prerequesits</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShkcGx5cilcbmBgYCJ9 -->
-<pre class="r"><code>library(dplyr)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcIm91dGxpZXJzXCIpXG5gYGAifQ== -->
+<pre class="r"><code>install.packages(&quot;outliers&quot;)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gaW5zdGFsbC5wYWNrYWdlcyA6IFVwZGF0aW5nIGxvYWRlZCBwYWNrYWdlc1xuIn0= -->
+<pre><code>Error in install.packages : Updating loaded packages</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcInRpZHlyXCIpXG5gYGAifQ== -->
+<pre class="r"><code>install.packages(&quot;tidyr&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gaW5zdGFsbC5wYWNrYWdlcyA6IFVwZGF0aW5nIGxvYWRlZCBwYWNrYWdlc1xuIn0= -->
+<pre><code>Error in install.packages : Updating loaded packages</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcImNhcmV0XCIpXG5gYGAifQ== -->
+<pre class="r"><code>install.packages(&quot;caret&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV0FSTklORzogUnRvb2xzIGlzIHJlcXVpcmVkIHRvIGJ1aWxkIFIgcGFja2FnZXMgYnV0IGlzIG5vdCBjdXJyZW50bHkgaW5zdGFsbGVkLiBQbGVhc2UgZG93bmxvYWQgYW5kIGluc3RhbGwgdGhlIGFwcHJvcHJpYXRlIHZlcnNpb24gb2YgUnRvb2xzIGJlZm9yZSBwcm9jZWVkaW5nOlxuXG5odHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL3dpbmRvd3MvUnRvb2xzL1xuSW5zdGFsbGluZyBwYWNrYWdlIGludG8g4oCYQzovVXNlcnMvbHVjYXMvQXBwRGF0YS9Mb2NhbC9SL3dpbi1saWJyYXJ5LzQuMuKAmVxuKGFzIOKAmGxpYuKAmSBpcyB1bnNwZWNpZmllZClcbmFsc28gaW5zdGFsbGluZyB0aGUgZGVwZW5kZW5jaWVzIOKAmGxpc3RlbnbigJksIOKAmHBhcmFsbGVsbHnigJksIOKAmGZ1dHVyZeKAmSwg4oCYZ2xvYmFsc+KAmSwg4oCYc2hhcGXigJksIOKAmGZ1dHVyZS5hcHBseeKAmSwg4oCYbnVtRGVyaXbigJksIOKAmHByb2dyZXNzcuKAmSwg4oCYU1FVQVJFTeKAmSwg4oCYZGlhZ3JhbeKAmSwg4oCYbGF2YeKAmSwg4oCYY2xp4oCZLCDigJh0emRi4oCZLCDigJhwcm9kbGlt4oCZLCDigJhpdGVyYXRvcnPigJksIOKAmGNsb2Nr4oCZLCDigJhnb3dlcuKAmSwg4oCYaGFyZGhhdOKAmSwg4oCYaXByZWTigJksIOKAmHRpbWVEYXRl4oCZLCDigJhmb3JlYWNo4oCZLCDigJhNb2RlbE1ldHJpY3PigJksIOKAmHBST0PigJksIOKAmHJlY2lwZXPigJksIOKAmHJlc2hhcGUy4oCZXG4ifQ== -->
+<pre><code>WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/lucas/AppData/Local/R/win-library/4.2’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘listenv’, ‘parallelly’, ‘future’, ‘globals’, ‘shape’, ‘future.apply’, ‘numDeriv’, ‘progressr’, ‘SQUAREM’, ‘diagram’, ‘lava’, ‘cli’, ‘tzdb’, ‘prodlim’, ‘iterators’, ‘clock’, ‘gower’, ‘hardhat’, ‘ipred’, ‘timeDate’, ‘foreach’, ‘ModelMetrics’, ‘pROC’, ‘recipes’, ‘reshape2’</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG4gIFRoZXJlIGFyZSBiaW5hcnkgdmVyc2lvbnMgYXZhaWxhYmxlIGJ1dCB0aGUgc291cmNlIHZlcnNpb25zIGFyZSBsYXRlcjpcbiJ9 -->
+<pre><code>
+  There are binary versions available but the source versions are later:</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NCwibmNvbCI6Mywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbNCDDlyAzXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJtMVJXMnJETUJCVS9FaUlvU1dsNThqaVIxdHlnTklEbEJieVZ4UlpqVVVWeWNoT0g1ZFB1M0swSkRFMUNPMnNka2FqOGZQanVzcldHV01zWmtrVXNUakZrcVd2TDAvTEZjTU9nZ2xMMk56djN6aDBPMHd5dHNDVmhJTzBnZ2NvQThqS3ZLd2dYMEc1b3VNQ0tpZ0NtQmFRUTVIL3AxQ2RLZHhCanBMM0p3VnNuQUJxK0xsQndQczdydkJkZUU0TjM4a3UzQmFUaDQweTNQMFE2dXplQ1JuUWpaR3k3dDZFM2JWSzgxNVpNMUtjTy9zRjU2cjBobGhvRmNwWjYyeXQxWTVndzEzZDhKNmdrMEsxbm45cFZXamVrU2cxczVyM0hONGQzb2ZvTUtMTWJPc2RJaW55LzJVNklrL2NxTEhZRysrOFhvcG1iejZXWlQ0NmoxdXpEY0ZTcUZkaFQ4N3ErR2dqK2czMEtTVXB6VllaU2pMVmZDTTFLZGZ5TTVUWEdPQ1FIN1JPR1FvbHcyNEh2ZTA1VVRKaE5YV0dwN1BESHgyVEV5aXRBZ0FBIn0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["binary"],"name":[1],"type":["chr"],"align":["left"]},{"label":["source"],"name":[2],"type":["chr"],"align":["left"]},{"label":["needs_compilation"],"name":[3],"type":["lgl"],"align":["right"]}],"data":[{"1":"3.6.2","2":"3.6.3","3":"TRUE","_rn_":"cli"},{"1":"2023.08.28","2":"2024.06.25","3":"TRUE","_rn_":"prodlim"},{"1":"1.3.1","2":"1.4.0","3":"FALSE","_rn_":"hardhat"},{"1":"1.0.10","2":"1.1.0","3":"FALSE","_rn_":"recipes"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG4gIEJpbmFyaWVzIHdpbGwgYmUgaW5zdGFsbGVkXG4ifQ== -->
+<pre><code>
+  Binaries will be installed</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoidHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvNC4yL2xpc3RlbnZfMC45LjEuemlwJ1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi96aXAnIGxlbmd0aCAxMDkxOTMgYnl0ZXMgKDEwNiBLQilcbmRvd25sb2FkZWQgMTA2IEtCXG5cbnRyeWluZyBVUkwgJ2h0dHBzOi8vY3Jhbi5yc3R1ZGlvLmNvbS9iaW4vd2luZG93cy9jb250cmliLzQuMi9wYXJhbGxlbGx5XzEuMzcuMS56aXAnXG5Db250ZW50IHR5cGUgJ2FwcGxpY2F0aW9uL3ppcCcgbGVuZ3RoIDM2MjQyMSBieXRlcyAoMzUzIEtCKVxuZG93bmxvYWRlZCAzNTMgS0JcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvNC4yL2Z1dHVyZV8xLjMzLjIuemlwJ1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi96aXAnIGxlbmd0aCA2ODIyNzIgYnl0ZXMgKDY2NiBLQilcbmRvd25sb2FkZWQgNjY2IEtCXG5cbnRyeWluZyBVUkwgJ2h0dHBzOi8vY3Jhbi5yc3R1ZGlvLmNvbS9iaW4vd2luZG93cy9jb250cmliLzQuMi9nbG9iYWxzXzAuMTYuMy56aXAnXG5Db250ZW50IHR5cGUgJ2FwcGxpY2F0aW9uL3ppcCcgbGVuZ3RoIDEwOTU1MCBieXRlcyAoMTA2IEtCKVxuZG93bmxvYWRlZCAxMDYgS0JcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvNC4yL3NoYXBlXzEuNC42LjEuemlwJ1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi96aXAnIGxlbmd0aCA3NTAzNjYgYnl0ZXMgKDczMiBLQilcbmRvd25sb2FkZWQgNzMyIEtCXG5cbnRyeWluZyBVUkwgJ2h0dHBzOi8vY3Jhbi5yc3R1ZGlvLmNvbS9iaW4vd2luZG93cy9jb250cmliLzQuMi9mdXR1cmUuYXBwbHlfMS4xMS4yLnppcCdcbkNvbnRlbnQgdHlwZSAnYXBwbGljYXRpb24vemlwJyBsZW5ndGggMTU2MzAwIGJ5dGVzICgxNTIgS0IpXG5kb3dubG9hZGVkIDE1MiBLQlxuXG50cnlpbmcgVVJMICdodHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL3dpbmRvd3MvY29udHJpYi80LjIvbnVtRGVyaXZfMjAxNi44LTEuMS56aXAnXG5Db250ZW50IHR5cGUgJ2FwcGxpY2F0aW9uL3ppcCcgbGVuZ3RoIDExNjEwMiBieXRlcyAoMTEzIEtCKVxuZG93bmxvYWRlZCAxMTMgS0JcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvNC4yL3Byb2dyZXNzcl8wLjE0LjAuemlwJ1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi96aXAnIGxlbmd0aCAzODc4NzMgYnl0ZXMgKDM3OCBLQilcbmRvd25sb2FkZWQgMzc4IEtCXG5cbnRyeWluZyBVUkwgJ2h0dHBzOi8vY3Jhbi5yc3R1ZGlvLmNvbS9iaW4vd2luZG93cy9jb250cmliLzQuMi9TUVVBUkVNXzIwMjEuMS56aXAnXG5Db250ZW50IHR5cGUgJ2FwcGxpY2F0aW9uL3ppcCcgbGVuZ3RoIDE4MzA2NSBieXRlcyAoMTc4IEtCKVxuZG93bmxvYWRlZCAxNzggS0JcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvNC4yL2RpYWdyYW1fMS42LjUuemlwJ1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi96aXAnIGxlbmd0aCA2ODI2MjAgYnl0ZXMgKDY2NiBLQilcbmRvd25sb2FkZWQgNjY2IEtCXG5cbnRyeWluZyBVUkwgJ2h0dHBzOi8vY3Jhbi5yc3R1ZGlvLmNvbS9iaW4vd2luZG93cy9jb250cmliLzQuMi9sYXZhXzEuOC4wLnppcCdcbkNvbnRlbnQgdHlwZSAnYXBwbGljYXRpb24vemlwJyBsZW5ndGggMjUwMDEyNCBieXRlcyAoMi40IE1CKVxuZG93bmxvYWRlZCAyLjQgTUJcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvNC4yL2NsaV8zLjYuMi56aXAnXG5Db250ZW50IHR5cGUgJ2FwcGxpY2F0aW9uL3ppcCcgbGVuZ3RoIDEzMzgzMDQgYnl0ZXMgKDEuMyBNQilcbmRvd25sb2FkZWQgMS4zIE1CXG5cbnRyeWluZyBVUkwgJ2h0dHBzOi8vY3Jhbi5yc3R1ZGlvLmNvbS9iaW4vd2luZG93cy9jb250cmliLzQuMi90emRiXzAuNC4wLnppcCdcbkNvbnRlbnQgdHlwZSAnYXBwbGljYXRpb24vemlwJyBsZW5ndGggMTAyMjAzOSBieXRlcyAoOTk4IEtCKVxuZG93bmxvYWRlZCA5OTggS0JcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvNC4yL3Byb2RsaW1fMjAyMy4wOC4yOC56aXAnXG5Db250ZW50IHR5cGUgJ2FwcGxpY2F0aW9uL3ppcCcgbGVuZ3RoIDQxNTE5OSBieXRlcyAoNDA1IEtCKVxuZG93bmxvYWRlZCA0MDUgS0JcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvNC4yL2l0ZXJhdG9yc18xLjAuMTQuemlwJ1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi96aXAnIGxlbmd0aCAzNTMzMzUgYnl0ZXMgKDM0NSBLQilcbmRvd25sb2FkZWQgMzQ1IEtCXG5cbnRyeWluZyBVUkwgJ2h0dHBzOi8vY3Jhbi5yc3R1ZGlvLmNvbS9iaW4vd2luZG93cy9jb250cmliLzQuMi9jbG9ja18wLjcuMC56aXAnXG5Db250ZW50IHR5cGUgJ2FwcGxpY2F0aW9uL3ppcCcgbGVuZ3RoIDIxMjkzMjIgYnl0ZXMgKDIuMCBNQilcbmRvd25sb2FkZWQgMi4wIE1CXG5cbnRyeWluZyBVUkwgJ2h0dHBzOi8vY3Jhbi5yc3R1ZGlvLmNvbS9iaW4vd2luZG93cy9jb250cmliLzQuMi9nb3dlcl8xLjAuMS56aXAnXG5Db250ZW50IHR5cGUgJ2FwcGxpY2F0aW9uL3ppcCcgbGVuZ3RoIDMwNDgxOSBieXRlcyAoMjk3IEtCKVxuZG93bmxvYWRlZCAyOTcgS0JcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvNC4yL2lwcmVkXzAuOS0xNC56aXAnXG5Db250ZW50IHR5cGUgJ2FwcGxpY2F0aW9uL3ppcCcgbGVuZ3RoIDM4ODU0OSBieXRlcyAoMzc5IEtCKVxuZG93bmxvYWRlZCAzNzkgS0JcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvNC4yL3RpbWVEYXRlXzQwMzIuMTA5LnppcCdcbkNvbnRlbnQgdHlwZSAnYXBwbGljYXRpb24vemlwJyBsZW5ndGggMTQxOTc0OSBieXRlcyAoMS40IE1CKVxuZG93bmxvYWRlZCAxLjQgTUJcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvNC4yL2ZvcmVhY2hfMS41LjIuemlwJ1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi96aXAnIGxlbmd0aCAxNDgxNjcgYnl0ZXMgKDE0NCBLQilcbmRvd25sb2FkZWQgMTQ0IEtCXG5cbnRyeWluZyBVUkwgJ2h0dHBzOi8vY3Jhbi5yc3R1ZGlvLmNvbS9iaW4vd2luZG93cy9jb250cmliLzQuMi9Nb2RlbE1ldHJpY3NfMS4yLjIuMi56aXAnXG5Db250ZW50IHR5cGUgJ2FwcGxpY2F0aW9uL3ppcCcgbGVuZ3RoIDQ3NjQzOSBieXRlcyAoNDY1IEtCKVxuZG93bmxvYWRlZCA0NjUgS0JcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvNC4yL3BST0NfMS4xOC41LnppcCdcbkNvbnRlbnQgdHlwZSAnYXBwbGljYXRpb24vemlwJyBsZW5ndGggMTE2MTI3OSBieXRlcyAoMS4xIE1CKVxuZG93bmxvYWRlZCAxLjEgTUJcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvNC4yL3Jlc2hhcGUyXzEuNC40LnppcCdcbkNvbnRlbnQgdHlwZSAnYXBwbGljYXRpb24vemlwJyBsZW5ndGggNDQ2NTU0IGJ5dGVzICg0MzYgS0IpXG5kb3dubG9hZGVkIDQzNiBLQlxuXG50cnlpbmcgVVJMICdodHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL3dpbmRvd3MvY29udHJpYi80LjIvY2FyZXRfNi4wLTk0LnppcCdcbkNvbnRlbnQgdHlwZSAnYXBwbGljYXRpb24vemlwJyBsZW5ndGggMzU3OTQ1NCBieXRlcyAoMy40IE1CKVxuZG93bmxvYWRlZCAzLjQgTUJcbiJ9 -->
+<pre><code>trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/listenv_0.9.1.zip&#39;
+Content type &#39;application/zip&#39; length 109193 bytes (106 KB)
+downloaded 106 KB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/parallelly_1.37.1.zip&#39;
+Content type &#39;application/zip&#39; length 362421 bytes (353 KB)
+downloaded 353 KB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/future_1.33.2.zip&#39;
+Content type &#39;application/zip&#39; length 682272 bytes (666 KB)
+downloaded 666 KB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/globals_0.16.3.zip&#39;
+Content type &#39;application/zip&#39; length 109550 bytes (106 KB)
+downloaded 106 KB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/shape_1.4.6.1.zip&#39;
+Content type &#39;application/zip&#39; length 750366 bytes (732 KB)
+downloaded 732 KB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/future.apply_1.11.2.zip&#39;
+Content type &#39;application/zip&#39; length 156300 bytes (152 KB)
+downloaded 152 KB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/numDeriv_2016.8-1.1.zip&#39;
+Content type &#39;application/zip&#39; length 116102 bytes (113 KB)
+downloaded 113 KB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/progressr_0.14.0.zip&#39;
+Content type &#39;application/zip&#39; length 387873 bytes (378 KB)
+downloaded 378 KB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/SQUAREM_2021.1.zip&#39;
+Content type &#39;application/zip&#39; length 183065 bytes (178 KB)
+downloaded 178 KB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/diagram_1.6.5.zip&#39;
+Content type &#39;application/zip&#39; length 682620 bytes (666 KB)
+downloaded 666 KB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/lava_1.8.0.zip&#39;
+Content type &#39;application/zip&#39; length 2500124 bytes (2.4 MB)
+downloaded 2.4 MB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/cli_3.6.2.zip&#39;
+Content type &#39;application/zip&#39; length 1338304 bytes (1.3 MB)
+downloaded 1.3 MB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/tzdb_0.4.0.zip&#39;
+Content type &#39;application/zip&#39; length 1022039 bytes (998 KB)
+downloaded 998 KB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/prodlim_2023.08.28.zip&#39;
+Content type &#39;application/zip&#39; length 415199 bytes (405 KB)
+downloaded 405 KB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/iterators_1.0.14.zip&#39;
+Content type &#39;application/zip&#39; length 353335 bytes (345 KB)
+downloaded 345 KB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/clock_0.7.0.zip&#39;
+Content type &#39;application/zip&#39; length 2129322 bytes (2.0 MB)
+downloaded 2.0 MB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/gower_1.0.1.zip&#39;
+Content type &#39;application/zip&#39; length 304819 bytes (297 KB)
+downloaded 297 KB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/ipred_0.9-14.zip&#39;
+Content type &#39;application/zip&#39; length 388549 bytes (379 KB)
+downloaded 379 KB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/timeDate_4032.109.zip&#39;
+Content type &#39;application/zip&#39; length 1419749 bytes (1.4 MB)
+downloaded 1.4 MB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/foreach_1.5.2.zip&#39;
+Content type &#39;application/zip&#39; length 148167 bytes (144 KB)
+downloaded 144 KB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/ModelMetrics_1.2.2.2.zip&#39;
+Content type &#39;application/zip&#39; length 476439 bytes (465 KB)
+downloaded 465 KB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/pROC_1.18.5.zip&#39;
+Content type &#39;application/zip&#39; length 1161279 bytes (1.1 MB)
+downloaded 1.1 MB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/reshape2_1.4.4.zip&#39;
+Content type &#39;application/zip&#39; length 446554 bytes (436 KB)
+downloaded 436 KB
+
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.2/caret_6.0-94.zip&#39;
+Content type &#39;application/zip&#39; length 3579454 bytes (3.4 MB)
+downloaded 3.4 MB</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoicGFja2FnZSDigJhsaXN0ZW524oCZIHN1Y2Nlc3NmdWxseSB1bnBhY2tlZCBhbmQgTUQ1IHN1bXMgY2hlY2tlZFxucGFja2FnZSDigJhwYXJhbGxlbGx54oCZIHN1Y2Nlc3NmdWxseSB1bnBhY2tlZCBhbmQgTUQ1IHN1bXMgY2hlY2tlZFxucGFja2FnZSDigJhmdXR1cmXigJkgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5wYWNrYWdlIOKAmGdsb2JhbHPigJkgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5wYWNrYWdlIOKAmHNoYXBl4oCZIHN1Y2Nlc3NmdWxseSB1bnBhY2tlZCBhbmQgTUQ1IHN1bXMgY2hlY2tlZFxucGFja2FnZSDigJhmdXR1cmUuYXBwbHnigJkgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5wYWNrYWdlIOKAmG51bURlcml24oCZIHN1Y2Nlc3NmdWxseSB1bnBhY2tlZCBhbmQgTUQ1IHN1bXMgY2hlY2tlZFxucGFja2FnZSDigJhwcm9ncmVzc3LigJkgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5wYWNrYWdlIOKAmFNRVUFSRU3igJkgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5wYWNrYWdlIOKAmGRpYWdyYW3igJkgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5wYWNrYWdlIOKAmGxhdmHigJkgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5wYWNrYWdlIOKAmGNsaeKAmSBzdWNjZXNzZnVsbHkgdW5wYWNrZWQgYW5kIE1ENSBzdW1zIGNoZWNrZWRcbldhcm5pbmcgaW4gaW5zdGFsbC5wYWNrYWdlcyA6XG4gIGNhbm5vdCByZW1vdmUgcHJpb3IgaW5zdGFsbGF0aW9uIG9mIHBhY2thZ2Ug4oCYY2xp4oCZXG5XYXJuaW5nIGluIGluc3RhbGwucGFja2FnZXMgOlxuICBwcm9ibGVtIGNvcHlpbmcgQzpcXFVzZXJzXFxsdWNhc1xcQXBwRGF0YVxcTG9jYWxcXFJcXHdpbi1saWJyYXJ5XFw0LjJcXDAwTE9DS1xcY2xpXFxsaWJzXFx4NjRcXGNsaS5kbGwgdG8gQzpcXFVzZXJzXFxsdWNhc1xcQXBwRGF0YVxcTG9jYWxcXFJcXHdpbi1saWJyYXJ5XFw0LjJcXGNsaVxcbGlic1xceDY0XFxjbGkuZGxsOiBQZXJtaXNzaW9uIGRlbmllZFxuV2FybmluZyBpbiBpbnN0YWxsLnBhY2thZ2VzIDpcbiAgcmVzdG9yZWQg4oCYY2xp4oCZXG5wYWNrYWdlIOKAmHR6ZGLigJkgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5wYWNrYWdlIOKAmHByb2RsaW3igJkgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5wYWNrYWdlIOKAmGl0ZXJhdG9yc+KAmSBzdWNjZXNzZnVsbHkgdW5wYWNrZWQgYW5kIE1ENSBzdW1zIGNoZWNrZWRcbnBhY2thZ2Ug4oCYY2xvY2vigJkgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5wYWNrYWdlIOKAmGdvd2Vy4oCZIHN1Y2Nlc3NmdWxseSB1bnBhY2tlZCBhbmQgTUQ1IHN1bXMgY2hlY2tlZFxucGFja2FnZSDigJhpcHJlZOKAmSBzdWNjZXNzZnVsbHkgdW5wYWNrZWQgYW5kIE1ENSBzdW1zIGNoZWNrZWRcbnBhY2thZ2Ug4oCYdGltZURhdGXigJkgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5wYWNrYWdlIOKAmGZvcmVhY2jigJkgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5wYWNrYWdlIOKAmE1vZGVsTWV0cmljc+KAmSBzdWNjZXNzZnVsbHkgdW5wYWNrZWQgYW5kIE1ENSBzdW1zIGNoZWNrZWRcbnBhY2thZ2Ug4oCYcFJPQ+KAmSBzdWNjZXNzZnVsbHkgdW5wYWNrZWQgYW5kIE1ENSBzdW1zIGNoZWNrZWRcbnBhY2thZ2Ug4oCYcmVzaGFwZTLigJkgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5wYWNrYWdlIOKAmGNhcmV04oCZIHN1Y2Nlc3NmdWxseSB1bnBhY2tlZCBhbmQgTUQ1IHN1bXMgY2hlY2tlZFxuXG5UaGUgZG93bmxvYWRlZCBiaW5hcnkgcGFja2FnZXMgYXJlIGluXG5cdEM6XFxVc2Vyc1xcbHVjYXNcXEFwcERhdGFcXExvY2FsXFxUZW1wXFxSdG1wc1JocUQ2XFxkb3dubG9hZGVkX3BhY2thZ2VzXG4ifQ== -->
+<pre><code>package ‘listenv’ successfully unpacked and MD5 sums checked
+package ‘parallelly’ successfully unpacked and MD5 sums checked
+package ‘future’ successfully unpacked and MD5 sums checked
+package ‘globals’ successfully unpacked and MD5 sums checked
+package ‘shape’ successfully unpacked and MD5 sums checked
+package ‘future.apply’ successfully unpacked and MD5 sums checked
+package ‘numDeriv’ successfully unpacked and MD5 sums checked
+package ‘progressr’ successfully unpacked and MD5 sums checked
+package ‘SQUAREM’ successfully unpacked and MD5 sums checked
+package ‘diagram’ successfully unpacked and MD5 sums checked
+package ‘lava’ successfully unpacked and MD5 sums checked
+package ‘cli’ successfully unpacked and MD5 sums checked
+Warning in install.packages :
+  cannot remove prior installation of package ‘cli’
+Warning in install.packages :
+  problem copying C:\Users\lucas\AppData\Local\R\win-library\4.2\00LOCK\cli\libs\x64\cli.dll to C:\Users\lucas\AppData\Local\R\win-library\4.2\cli\libs\x64\cli.dll: Permission denied
+Warning in install.packages :
+  restored ‘cli’
+package ‘tzdb’ successfully unpacked and MD5 sums checked
+package ‘prodlim’ successfully unpacked and MD5 sums checked
+package ‘iterators’ successfully unpacked and MD5 sums checked
+package ‘clock’ successfully unpacked and MD5 sums checked
+package ‘gower’ successfully unpacked and MD5 sums checked
+package ‘ipred’ successfully unpacked and MD5 sums checked
+package ‘timeDate’ successfully unpacked and MD5 sums checked
+package ‘foreach’ successfully unpacked and MD5 sums checked
+package ‘ModelMetrics’ successfully unpacked and MD5 sums checked
+package ‘pROC’ successfully unpacked and MD5 sums checked
+package ‘reshape2’ successfully unpacked and MD5 sums checked
+package ‘caret’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+    C:\Users\lucas\AppData\Local\Temp\RtmpsRhqD6\downloaded_packages</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiaW5zdGFsbGluZyB0aGUgc291cmNlIHBhY2thZ2VzIOKAmGhhcmRoYXTigJksIOKAmHJlY2lwZXPigJlcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL3NyYy9jb250cmliL2hhcmRoYXRfMS40LjAudGFyLmd6J1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi94LWd6aXAnIGxlbmd0aCA2MTExNTcgYnl0ZXMgKDU5NiBLQilcbmRvd25sb2FkZWQgNTk2IEtCXG5cbnRyeWluZyBVUkwgJ2h0dHBzOi8vY3Jhbi5yc3R1ZGlvLmNvbS9zcmMvY29udHJpYi9yZWNpcGVzXzEuMS4wLnRhci5neidcbkNvbnRlbnQgdHlwZSAnYXBwbGljYXRpb24veC1nemlwJyBsZW5ndGggODQwNzEzIGJ5dGVzICg4MjEgS0IpXG5kb3dubG9hZGVkIDgyMSBLQlxuIn0= -->
+<pre><code>installing the source packages ‘hardhat’, ‘recipes’
+
+trying URL &#39;https://cran.rstudio.com/src/contrib/hardhat_1.4.0.tar.gz&#39;
+Content type &#39;application/x-gzip&#39; length 611157 bytes (596 KB)
+downloaded 596 KB
+
+trying URL &#39;https://cran.rstudio.com/src/contrib/recipes_1.1.0.tar.gz&#39;
+Content type &#39;application/x-gzip&#39; length 840713 bytes (821 KB)
+downloaded 821 KB</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiKiBpbnN0YWxsaW5nICpzb3VyY2UqIHBhY2thZ2UgJ2hhcmRoYXQnIC4uLlxuKiogcGFja2FnZSAnaGFyZGhhdCcgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG4qKiB1c2luZyBzdGFnZWQgaW5zdGFsbGF0aW9uXG4qKiBSXG4qKiBkYXRhXG4qKiogbW92aW5nIGRhdGFzZXRzIHRvIGxhenlsb2FkIERCXG4qKiBpbnN0XG4qKiBieXRlLWNvbXBpbGUgYW5kIHByZXBhcmUgcGFja2FnZSBmb3IgbGF6eSBsb2FkaW5nXG4qKiBoZWxwXG4qKiogaW5zdGFsbGluZyBoZWxwIGluZGljZXNcbioqKiBjb3B5aW5nIGZpZ3VyZXNcbioqIGJ1aWxkaW5nIHBhY2thZ2UgaW5kaWNlc1xuKiogaW5zdGFsbGluZyB2aWduZXR0ZXNcbioqIHRlc3RpbmcgaWYgaW5zdGFsbGVkIHBhY2thZ2UgY2FuIGJlIGxvYWRlZCBmcm9tIHRlbXBvcmFyeSBsb2NhdGlvblxuKiogdGVzdGluZyBpZiBpbnN0YWxsZWQgcGFja2FnZSBjYW4gYmUgbG9hZGVkIGZyb20gZmluYWwgbG9jYXRpb25cbioqIHRlc3RpbmcgaWYgaW5zdGFsbGVkIHBhY2thZ2Uga2VlcHMgYSByZWNvcmQgb2YgdGVtcG9yYXJ5IGluc3RhbGxhdGlvbiBwYXRoXG4qIERPTkUgKGhhcmRoYXQpXG4qIGluc3RhbGxpbmcgKnNvdXJjZSogcGFja2FnZSAncmVjaXBlcycgLi4uXG4qKiBwYWNrYWdlICdyZWNpcGVzJyBzdWNjZXNzZnVsbHkgdW5wYWNrZWQgYW5kIE1ENSBzdW1zIGNoZWNrZWRcbioqIHVzaW5nIHN0YWdlZCBpbnN0YWxsYXRpb25cbioqIFJcbioqIGluc3RcbioqIGJ5dGUtY29tcGlsZSBhbmQgcHJlcGFyZSBwYWNrYWdlIGZvciBsYXp5IGxvYWRpbmdcbldhcm5pbmcgbWVzc2FnZTpcbnBhY2thZ2UgJ2RwbHlyJyB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDQuMi4zIFxuKiogaGVscFxuKioqIGluc3RhbGxpbmcgaGVscCBpbmRpY2VzXG4qKiogY29weWluZyBmaWd1cmVzXG4qKiBidWlsZGluZyBwYWNrYWdlIGluZGljZXNcbioqIGluc3RhbGxpbmcgdmlnbmV0dGVzXG4qKiB0ZXN0aW5nIGlmIGluc3RhbGxlZCBwYWNrYWdlIGNhbiBiZSBsb2FkZWQgZnJvbSB0ZW1wb3JhcnkgbG9jYXRpb25cbldhcm5pbmc6IHBhY2thZ2UgJ2RwbHlyJyB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDQuMi4zXG4qKiB0ZXN0aW5nIGlmIGluc3RhbGxlZCBwYWNrYWdlIGNhbiBiZSBsb2FkZWQgZnJvbSBmaW5hbCBsb2NhdGlvblxuV2FybmluZzogcGFja2FnZSAnZHBseXInIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gNC4yLjNcbioqIHRlc3RpbmcgaWYgaW5zdGFsbGVkIHBhY2thZ2Uga2VlcHMgYSByZWNvcmQgb2YgdGVtcG9yYXJ5IGluc3RhbGxhdGlvbiBwYXRoXG4qIERPTkUgKHJlY2lwZXMpXG4ifQ== -->
+<pre><code>* installing *source* package &#39;hardhat&#39; ...
+** package &#39;hardhat&#39; successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (hardhat)
+* installing *source* package &#39;recipes&#39; ...
+** package &#39;recipes&#39; successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+Warning message:
+package &#39;dplyr&#39; was built under R version 4.2.3 
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+Warning: package &#39;dplyr&#39; was built under R version 4.2.3
+** testing if installed package can be loaded from final location
+Warning: package &#39;dplyr&#39; was built under R version 4.2.3
+** testing if installed package keeps a record of temporary installation path
+* DONE (recipes)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5UaGUgZG93bmxvYWRlZCBzb3VyY2UgcGFja2FnZXMgYXJlIGluXG5cdOKAmEM6XFxVc2Vyc1xcbHVjYXNcXEFwcERhdGFcXExvY2FsXFxUZW1wXFxSdG1wc1JocUQ2XFxkb3dubG9hZGVkX3BhY2thZ2Vz4oCZXG4ifQ== -->
+<pre><code>
+The downloaded source packages are in
+    ‘C:\Users\lucas\AppData\Local\Temp\RtmpsRhqD6\downloaded_packages’</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcInRpZHlyXCIpXG5gYGAifQ== -->
+<pre class="r"><code>install.packages(&quot;tidyr&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV0FSTklORzogUnRvb2xzIGlzIHJlcXVpcmVkIHRvIGJ1aWxkIFIgcGFja2FnZXMgYnV0IGlzIG5vdCBjdXJyZW50bHkgaW5zdGFsbGVkLiBQbGVhc2UgZG93bmxvYWQgYW5kIGluc3RhbGwgdGhlIGFwcHJvcHJpYXRlIHZlcnNpb24gb2YgUnRvb2xzIGJlZm9yZSBwcm9jZWVkaW5nOlxuXG5odHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL3dpbmRvd3MvUnRvb2xzL1xuIn0= -->
+<pre><code>WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBpbiBpbnN0YWxsLnBhY2thZ2VzIDpcbiAgcGFja2FnZSDigJh0aWR5cuKAmSBpcyBpbiB1c2UgYW5kIHdpbGwgbm90IGJlIGluc3RhbGxlZFxuIn0= -->
+<pre><code>Warning in install.packages :
+  package ‘tidyr’ is in use and will not be installed</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcIm91dGxpZXJzXCIpXG5gYGAifQ== -->
+<pre class="r"><code>install.packages(&quot;outliers&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gaW5zdGFsbC5wYWNrYWdlcyA6IFVwZGF0aW5nIGxvYWRlZCBwYWNrYWdlc1xuIn0= -->
+<pre><code>Error in install.packages : Updating loaded packages</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5saWJyYXJ5KG91dGxpZXJzKVxubGlicmFyeShjYXJldClcbmBgYCJ9 -->
+<pre class="r"><code>library(dplyr)
+library(tidyr)
+library(outliers)
+library(caret)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogcGFja2FnZSDigJhjYXJldOKAmSB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDQuMi4zXG5Mb2FkaW5nIHJlcXVpcmVkIHBhY2thZ2U6IGxhdHRpY2VcblJlZ2lzdGVyZWQgUzMgbWV0aG9kIG92ZXJ3cml0dGVuIGJ5ICdkYXRhLnRhYmxlJzpcbiAgbWV0aG9kICAgICAgICAgICBmcm9tXG4gIHByaW50LmRhdGEudGFibGUgICAgIFxuIn0= -->
+<pre><code>Warning: package ‘caret’ was built under R version 4.2.3
+Loading required package: lattice
+Registered S3 method overwritten by &#39;data.table&#39;:
+  method           from
+  print.data.table     </code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -1768,99 +2020,243 @@ Employees</h1>
 <p>Load the dataset and get some basic descriptions.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXR0cml0aW9uX2RhdGEgPC0gcmVhZC5jc3YoXCJEYXRhc2V0LUhSLUVtcGxveWVlLUF0dHJpdGlvbi5jc3ZcIilcbnN0cihhdHRyaXRpb25fZGF0YSlcbmBgYCJ9 -->
-<pre class="r"><code>attrition_data &lt;- read.csv(&quot;Dataset-HR-Employee-Attrition.csv&quot;)
-str(attrition_data)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYXR0cml0aW9uX2RhdGEgPC0gcmVhZC5jc3YoXCJEYXRhc2V0LUhSLUVtcGxveWVlLUF0dHJpdGlvbi5jc3ZcIiwgc3RyaW5nc0FzRmFjdG9ycyA9IFRSVUUpXG5zdW1tYXJ5KGF0dHJpdGlvbl9kYXRhKVxuYGBgIn0= -->
+<pre class="r"><code>attrition_data &lt;- read.csv(&quot;Dataset-HR-Employee-Attrition.csv&quot;, stringsAsFactors = TRUE)
+summary(attrition_data)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiJ2RhdGEuZnJhbWUnOlx0MTQ3MCBvYnMuIG9mICAzNSB2YXJpYWJsZXM6XG4gJCBBZ2UgICAgICAgICAgICAgICAgICAgICA6IGludCAgNDEgNDkgMzcgMzMgMjcgMzIgNTkgMzAgMzggMzYgLi4uXG4gJCBBdHRyaXRpb24gICAgICAgICAgICAgICA6IGNociAgXCJZZXNcIiBcIk5vXCIgXCJZZXNcIiBcIk5vXCIgLi4uXG4gJCBCdXNpbmVzc1RyYXZlbCAgICAgICAgICA6IGNociAgXCJUcmF2ZWxfUmFyZWx5XCIgXCJUcmF2ZWxfRnJlcXVlbnRseVwiIFwiVHJhdmVsX1JhcmVseVwiIFwiVHJhdmVsX0ZyZXF1ZW50bHlcIiAuLi5cbiAkIERhaWx5UmF0ZSAgICAgICAgICAgICAgIDogaW50ICAxMTAyIDI3OSAxMzczIDEzOTIgNTkxIDEwMDUgMTMyNCAxMzU4IDIxNiAxMjk5IC4uLlxuICQgRGVwYXJ0bWVudCAgICAgICAgICAgICAgOiBjaHIgIFwiU2FsZXNcIiBcIlJlc2VhcmNoICYgRGV2ZWxvcG1lbnRcIiBcIlJlc2VhcmNoICYgRGV2ZWxvcG1lbnRcIiBcIlJlc2VhcmNoICYgRGV2ZWxvcG1lbnRcIiAuLi5cbiAkIERpc3RhbmNlRnJvbUhvbWUgICAgICAgIDogaW50ICAxIDggMiAzIDIgMiAzIDI0IDIzIDI3IC4uLlxuICQgRWR1Y2F0aW9uICAgICAgICAgICAgICAgOiBpbnQgIDIgMSAyIDQgMSAyIDMgMSAzIDMgLi4uXG4gJCBFZHVjYXRpb25GaWVsZCAgICAgICAgICA6IGNociAgXCJMaWZlIFNjaWVuY2VzXCIgXCJMaWZlIFNjaWVuY2VzXCIgXCJPdGhlclwiIFwiTGlmZSBTY2llbmNlc1wiIC4uLlxuICQgRW1wbG95ZWVDb3VudCAgICAgICAgICAgOiBpbnQgIDEgMSAxIDEgMSAxIDEgMSAxIDEgLi4uXG4gJCBFbXBsb3llZU51bWJlciAgICAgICAgICA6IGludCAgMSAyIDQgNSA3IDggMTAgMTEgMTIgMTMgLi4uXG4gJCBFbnZpcm9ubWVudFNhdGlzZmFjdGlvbiA6IGludCAgMiAzIDQgNCAxIDQgMyA0IDQgMyAuLi5cbiAkIEdlbmRlciAgICAgICAgICAgICAgICAgIDogY2hyICBcIkZlbWFsZVwiIFwiTWFsZVwiIFwiTWFsZVwiIFwiRmVtYWxlXCIgLi4uXG4gJCBIb3VybHlSYXRlICAgICAgICAgICAgICA6IGludCAgOTQgNjEgOTIgNTYgNDAgNzkgODEgNjcgNDQgOTQgLi4uXG4gJCBKb2JJbnZvbHZlbWVudCAgICAgICAgICA6IGludCAgMyAyIDIgMyAzIDMgNCAzIDIgMyAuLi5cbiAkIEpvYkxldmVsICAgICAgICAgICAgICAgIDogaW50ICAyIDIgMSAxIDEgMSAxIDEgMyAyIC4uLlxuICQgSm9iUm9sZSAgICAgICAgICAgICAgICAgOiBjaHIgIFwiU2FsZXMgRXhlY3V0aXZlXCIgXCJSZXNlYXJjaCBTY2llbnRpc3RcIiBcIkxhYm9yYXRvcnkgVGVjaG5pY2lhblwiIFwiUmVzZWFyY2ggU2NpZW50aXN0XCIgLi4uXG4gJCBKb2JTYXRpc2ZhY3Rpb24gICAgICAgICA6IGludCAgNCAyIDMgMyAyIDQgMSAzIDMgMyAuLi5cbiAkIE1hcml0YWxTdGF0dXMgICAgICAgICAgIDogY2hyICBcIlNpbmdsZVwiIFwiTWFycmllZFwiIFwiU2luZ2xlXCIgXCJNYXJyaWVkXCIgLi4uXG4gJCBNb250aGx5SW5jb21lICAgICAgICAgICA6IGludCAgNTk5MyA1MTMwIDIwOTAgMjkwOSAzNDY4IDMwNjggMjY3MCAyNjkzIDk1MjYgNTIzNyAuLi5cbiAkIE1vbnRobHlSYXRlICAgICAgICAgICAgIDogaW50ICAxOTQ3OSAyNDkwNyAyMzk2IDIzMTU5IDE2NjMyIDExODY0IDk5NjQgMTMzMzUgODc4NyAxNjU3NyAuLi5cbiAkIE51bUNvbXBhbmllc1dvcmtlZCAgICAgIDogaW50ICA4IDEgNiAxIDkgMCA0IDEgMCA2IC4uLlxuICQgT3ZlcjE4ICAgICAgICAgICAgICAgICAgOiBjaHIgIFwiWVwiIFwiWVwiIFwiWVwiIFwiWVwiIC4uLlxuICQgT3ZlclRpbWUgICAgICAgICAgICAgICAgOiBjaHIgIFwiWWVzXCIgXCJOb1wiIFwiWWVzXCIgXCJZZXNcIiAuLi5cbiAkIFBlcmNlbnRTYWxhcnlIaWtlICAgICAgIDogaW50ICAxMSAyMyAxNSAxMSAxMiAxMyAyMCAyMiAyMSAxMyAuLi5cbiAkIFBlcmZvcm1hbmNlUmF0aW5nICAgICAgIDogaW50ICAzIDQgMyAzIDMgMyA0IDQgNCAzIC4uLlxuICQgUmVsYXRpb25zaGlwU2F0aXNmYWN0aW9uOiBpbnQgIDEgNCAyIDMgNCAzIDEgMiAyIDIgLi4uXG4gJCBTdGFuZGFyZEhvdXJzICAgICAgICAgICA6IGludCAgODAgODAgODAgODAgODAgODAgODAgODAgODAgODAgLi4uXG4gJCBTdG9ja09wdGlvbkxldmVsICAgICAgICA6IGludCAgMCAxIDAgMCAxIDAgMyAxIDAgMiAuLi5cbiAkIFRvdGFsV29ya2luZ1llYXJzICAgICAgIDogaW50ICA4IDEwIDcgOCA2IDggMTIgMSAxMCAxNyAuLi5cbiAkIFRyYWluaW5nVGltZXNMYXN0WWVhciAgIDogaW50ICAwIDMgMyAzIDMgMiAzIDIgMiAzIC4uLlxuICQgV29ya0xpZmVCYWxhbmNlICAgICAgICAgOiBpbnQgIDEgMyAzIDMgMyAyIDIgMyAzIDIgLi4uXG4gJCBZZWFyc0F0Q29tcGFueSAgICAgICAgICA6IGludCAgNiAxMCAwIDggMiA3IDEgMSA5IDcgLi4uXG4gJCBZZWFyc0luQ3VycmVudFJvbGUgICAgICA6IGludCAgNCA3IDAgNyAyIDcgMCAwIDcgNyAuLi5cbiAkIFllYXJzU2luY2VMYXN0UHJvbW90aW9uIDogaW50ICAwIDEgMCAzIDIgMyAwIDAgMSA3IC4uLlxuICQgWWVhcnNXaXRoQ3Vyck1hbmFnZXIgICAgOiBpbnQgIDUgNyAwIDAgMiA2IDAgMCA4IDcgLi4uXG4ifQ== -->
-<pre><code>&#39;data.frame&#39;:   1470 obs. of  35 variables:
- $ Age                     : int  41 49 37 33 27 32 59 30 38 36 ...
- $ Attrition               : chr  &quot;Yes&quot; &quot;No&quot; &quot;Yes&quot; &quot;No&quot; ...
- $ BusinessTravel          : chr  &quot;Travel_Rarely&quot; &quot;Travel_Frequently&quot; &quot;Travel_Rarely&quot; &quot;Travel_Frequently&quot; ...
- $ DailyRate               : int  1102 279 1373 1392 591 1005 1324 1358 216 1299 ...
- $ Department              : chr  &quot;Sales&quot; &quot;Research &amp; Development&quot; &quot;Research &amp; Development&quot; &quot;Research &amp; Development&quot; ...
- $ DistanceFromHome        : int  1 8 2 3 2 2 3 24 23 27 ...
- $ Education               : int  2 1 2 4 1 2 3 1 3 3 ...
- $ EducationField          : chr  &quot;Life Sciences&quot; &quot;Life Sciences&quot; &quot;Other&quot; &quot;Life Sciences&quot; ...
- $ EmployeeCount           : int  1 1 1 1 1 1 1 1 1 1 ...
- $ EmployeeNumber          : int  1 2 4 5 7 8 10 11 12 13 ...
- $ EnvironmentSatisfaction : int  2 3 4 4 1 4 3 4 4 3 ...
- $ Gender                  : chr  &quot;Female&quot; &quot;Male&quot; &quot;Male&quot; &quot;Female&quot; ...
- $ HourlyRate              : int  94 61 92 56 40 79 81 67 44 94 ...
- $ JobInvolvement          : int  3 2 2 3 3 3 4 3 2 3 ...
- $ JobLevel                : int  2 2 1 1 1 1 1 1 3 2 ...
- $ JobRole                 : chr  &quot;Sales Executive&quot; &quot;Research Scientist&quot; &quot;Laboratory Technician&quot; &quot;Research Scientist&quot; ...
- $ JobSatisfaction         : int  4 2 3 3 2 4 1 3 3 3 ...
- $ MaritalStatus           : chr  &quot;Single&quot; &quot;Married&quot; &quot;Single&quot; &quot;Married&quot; ...
- $ MonthlyIncome           : int  5993 5130 2090 2909 3468 3068 2670 2693 9526 5237 ...
- $ MonthlyRate             : int  19479 24907 2396 23159 16632 11864 9964 13335 8787 16577 ...
- $ NumCompaniesWorked      : int  8 1 6 1 9 0 4 1 0 6 ...
- $ Over18                  : chr  &quot;Y&quot; &quot;Y&quot; &quot;Y&quot; &quot;Y&quot; ...
- $ OverTime                : chr  &quot;Yes&quot; &quot;No&quot; &quot;Yes&quot; &quot;Yes&quot; ...
- $ PercentSalaryHike       : int  11 23 15 11 12 13 20 22 21 13 ...
- $ PerformanceRating       : int  3 4 3 3 3 3 4 4 4 3 ...
- $ RelationshipSatisfaction: int  1 4 2 3 4 3 1 2 2 2 ...
- $ StandardHours           : int  80 80 80 80 80 80 80 80 80 80 ...
- $ StockOptionLevel        : int  0 1 0 0 1 0 3 1 0 2 ...
- $ TotalWorkingYears       : int  8 10 7 8 6 8 12 1 10 17 ...
- $ TrainingTimesLastYear   : int  0 3 3 3 3 2 3 2 2 3 ...
- $ WorkLifeBalance         : int  1 3 3 3 3 2 2 3 3 2 ...
- $ YearsAtCompany          : int  6 10 0 8 2 7 1 1 9 7 ...
- $ YearsInCurrentRole      : int  4 7 0 7 2 7 0 0 7 7 ...
- $ YearsSinceLastPromotion : int  0 1 0 3 2 3 0 0 1 7 ...
- $ YearsWithCurrManager    : int  5 7 0 0 2 6 0 0 8 7 ...</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgQWdlICAgICAgICBBdHRyaXRpb24gICAgICAgICAgICBCdXNpbmVzc1RyYXZlbCAgIERhaWx5UmF0ZSAgICAgICAgICAgICAgICAgICAgICAgRGVwYXJ0bWVudCBcbiBNaW4uICAgOjE4LjAwICAgTm8gOjEyMzMgICBOb24tVHJhdmVsICAgICAgIDogMTUwICAgTWluLiAgIDogMTAyLjAgICBIdW1hbiBSZXNvdXJjZXMgICAgICAgOiA2MyAgXG4gMXN0IFF1LjozMC4wMCAgIFllczogMjM3ICAgVHJhdmVsX0ZyZXF1ZW50bHk6IDI3NyAgIDFzdCBRdS46IDQ2NS4wICAgUmVzZWFyY2ggJiBEZXZlbG9wbWVudDo5NjEgIFxuIE1lZGlhbiA6MzYuMDAgICAgICAgICAgICAgIFRyYXZlbF9SYXJlbHkgICAgOjEwNDMgICBNZWRpYW4gOiA4MDIuMCAgIFNhbGVzICAgICAgICAgICAgICAgICA6NDQ2ICBcbiBNZWFuICAgOjM2LjkyICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTWVhbiAgIDogODAyLjUgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gM3JkIFF1Ljo0My4wMCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDNyZCBRdS46MTE1Ny4wICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuIE1heC4gICA6NjAuMDAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBNYXguICAgOjE0OTkuMCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gRGlzdGFuY2VGcm9tSG9tZSAgIEVkdWNhdGlvbiAgICAgICAgICAgICAgRWR1Y2F0aW9uRmllbGQgRW1wbG95ZWVDb3VudCBFbXBsb3llZU51bWJlciAgXG4gTWluLiAgIDogMS4wMDAgICBNaW4uICAgOjEuMDAwICAgSHVtYW4gUmVzb3VyY2VzIDogMjcgICAgTWluLiAgIDoxICAgICBNaW4uICAgOiAgIDEuMCAgXG4gMXN0IFF1LjogMi4wMDAgICAxc3QgUXUuOjIuMDAwICAgTGlmZSBTY2llbmNlcyAgIDo2MDYgICAgMXN0IFF1LjoxICAgICAxc3QgUXUuOiA0OTEuMiAgXG4gTWVkaWFuIDogNy4wMDAgICBNZWRpYW4gOjMuMDAwICAgTWFya2V0aW5nICAgICAgIDoxNTkgICAgTWVkaWFuIDoxICAgICBNZWRpYW4gOjEwMjAuNSAgXG4gTWVhbiAgIDogOS4xOTMgICBNZWFuICAgOjIuOTEzICAgTWVkaWNhbCAgICAgICAgIDo0NjQgICAgTWVhbiAgIDoxICAgICBNZWFuICAgOjEwMjQuOSAgXG4gM3JkIFF1LjoxNC4wMDAgICAzcmQgUXUuOjQuMDAwICAgT3RoZXIgICAgICAgICAgIDogODIgICAgM3JkIFF1LjoxICAgICAzcmQgUXUuOjE1NTUuOCAgXG4gTWF4LiAgIDoyOS4wMDAgICBNYXguICAgOjUuMDAwICAgVGVjaG5pY2FsIERlZ3JlZToxMzIgICAgTWF4LiAgIDoxICAgICBNYXguICAgOjIwNjguMCAgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gRW52aXJvbm1lbnRTYXRpc2ZhY3Rpb24gICAgR2VuZGVyICAgICAgSG91cmx5UmF0ZSAgICAgSm9iSW52b2x2ZW1lbnQgICAgSm9iTGV2ZWwgICAgXG4gTWluLiAgIDoxLjAwMCAgICAgICAgICAgRmVtYWxlOjU4OCAgIE1pbi4gICA6IDMwLjAwICAgTWluLiAgIDoxLjAwICAgTWluLiAgIDoxLjAwMCAgXG4gMXN0IFF1LjoyLjAwMCAgICAgICAgICAgTWFsZSAgOjg4MiAgIDFzdCBRdS46IDQ4LjAwICAgMXN0IFF1LjoyLjAwICAgMXN0IFF1LjoxLjAwMCAgXG4gTWVkaWFuIDozLjAwMCAgICAgICAgICAgICAgICAgICAgICAgIE1lZGlhbiA6IDY2LjAwICAgTWVkaWFuIDozLjAwICAgTWVkaWFuIDoyLjAwMCAgXG4gTWVhbiAgIDoyLjcyMiAgICAgICAgICAgICAgICAgICAgICAgIE1lYW4gICA6IDY1Ljg5ICAgTWVhbiAgIDoyLjczICAgTWVhbiAgIDoyLjA2NCAgXG4gM3JkIFF1Ljo0LjAwMCAgICAgICAgICAgICAgICAgICAgICAgIDNyZCBRdS46IDgzLjc1ICAgM3JkIFF1LjozLjAwICAgM3JkIFF1LjozLjAwMCAgXG4gTWF4LiAgIDo0LjAwMCAgICAgICAgICAgICAgICAgICAgICAgIE1heC4gICA6MTAwLjAwICAgTWF4LiAgIDo0LjAwICAgTWF4LiAgIDo1LjAwMCAgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgICAgSm9iUm9sZSAgICBKb2JTYXRpc2ZhY3Rpb24gIE1hcml0YWxTdGF0dXMgTW9udGhseUluY29tZSAgICBNb250aGx5UmF0ZSAgIFxuIFNhbGVzIEV4ZWN1dGl2ZSAgICAgICAgICA6MzI2ICAgTWluLiAgIDoxLjAwMCAgIERpdm9yY2VkOjMyNyAgIE1pbi4gICA6IDEwMDkgICBNaW4uICAgOiAyMDk0ICBcbiBSZXNlYXJjaCBTY2llbnRpc3QgICAgICAgOjI5MiAgIDFzdCBRdS46Mi4wMDAgICBNYXJyaWVkIDo2NzMgICAxc3QgUXUuOiAyOTExICAgMXN0IFF1LjogODA0NyAgXG4gTGFib3JhdG9yeSBUZWNobmljaWFuICAgIDoyNTkgICBNZWRpYW4gOjMuMDAwICAgU2luZ2xlICA6NDcwICAgTWVkaWFuIDogNDkxOSAgIE1lZGlhbiA6MTQyMzYgIFxuIE1hbnVmYWN0dXJpbmcgRGlyZWN0b3IgICA6MTQ1ICAgTWVhbiAgIDoyLjcyOSAgICAgICAgICAgICAgICAgIE1lYW4gICA6IDY1MDMgICBNZWFuICAgOjE0MzEzICBcbiBIZWFsdGhjYXJlIFJlcHJlc2VudGF0aXZlOjEzMSAgIDNyZCBRdS46NC4wMDAgICAgICAgICAgICAgICAgICAzcmQgUXUuOiA4Mzc5ICAgM3JkIFF1LjoyMDQ2MiAgXG4gTWFuYWdlciAgICAgICAgICAgICAgICAgIDoxMDIgICBNYXguICAgOjQuMDAwICAgICAgICAgICAgICAgICAgTWF4LiAgIDoxOTk5OSAgIE1heC4gICA6MjY5OTkgIFxuIChPdGhlcikgICAgICAgICAgICAgICAgICA6MjE1ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiBOdW1Db21wYW5pZXNXb3JrZWQgT3ZlcjE4ICAgT3ZlclRpbWUgICBQZXJjZW50U2FsYXJ5SGlrZSBQZXJmb3JtYW5jZVJhdGluZyBSZWxhdGlvbnNoaXBTYXRpc2ZhY3Rpb25cbiBNaW4uICAgOjAuMDAwICAgICAgWToxNDcwICAgTm8gOjEwNTQgICBNaW4uICAgOjExLjAwICAgICBNaW4uICAgOjMuMDAwICAgICBNaW4uICAgOjEuMDAwICAgICAgICAgICBcbiAxc3QgUXUuOjEuMDAwICAgICAgICAgICAgICAgWWVzOiA0MTYgICAxc3QgUXUuOjEyLjAwICAgICAxc3QgUXUuOjMuMDAwICAgICAxc3QgUXUuOjIuMDAwICAgICAgICAgICBcbiBNZWRpYW4gOjIuMDAwICAgICAgICAgICAgICAgICAgICAgICAgICBNZWRpYW4gOjE0LjAwICAgICBNZWRpYW4gOjMuMDAwICAgICBNZWRpYW4gOjMuMDAwICAgICAgICAgICBcbiBNZWFuICAgOjIuNjkzICAgICAgICAgICAgICAgICAgICAgICAgICBNZWFuICAgOjE1LjIxICAgICBNZWFuICAgOjMuMTU0ICAgICBNZWFuICAgOjIuNzEyICAgICAgICAgICBcbiAzcmQgUXUuOjQuMDAwICAgICAgICAgICAgICAgICAgICAgICAgICAzcmQgUXUuOjE4LjAwICAgICAzcmQgUXUuOjMuMDAwICAgICAzcmQgUXUuOjQuMDAwICAgICAgICAgICBcbiBNYXguICAgOjkuMDAwICAgICAgICAgICAgICAgICAgICAgICAgICBNYXguICAgOjI1LjAwICAgICBNYXguICAgOjQuMDAwICAgICBNYXguICAgOjQuMDAwICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiBTdGFuZGFyZEhvdXJzIFN0b2NrT3B0aW9uTGV2ZWwgVG90YWxXb3JraW5nWWVhcnMgVHJhaW5pbmdUaW1lc0xhc3RZZWFyIFdvcmtMaWZlQmFsYW5jZSBZZWFyc0F0Q29tcGFueSAgXG4gTWluLiAgIDo4MCAgICBNaW4uICAgOjAuMDAwMCAgIE1pbi4gICA6IDAuMDAgICAgIE1pbi4gICA6MC4wMDAgICAgICAgICBNaW4uICAgOjEuMDAwICAgTWluLiAgIDogMC4wMDAgIFxuIDFzdCBRdS46ODAgICAgMXN0IFF1LjowLjAwMDAgICAxc3QgUXUuOiA2LjAwICAgICAxc3QgUXUuOjIuMDAwICAgICAgICAgMXN0IFF1LjoyLjAwMCAgIDFzdCBRdS46IDMuMDAwICBcbiBNZWRpYW4gOjgwICAgIE1lZGlhbiA6MS4wMDAwICAgTWVkaWFuIDoxMC4wMCAgICAgTWVkaWFuIDozLjAwMCAgICAgICAgIE1lZGlhbiA6My4wMDAgICBNZWRpYW4gOiA1LjAwMCAgXG4gTWVhbiAgIDo4MCAgICBNZWFuICAgOjAuNzkzOSAgIE1lYW4gICA6MTEuMjggICAgIE1lYW4gICA6Mi43OTkgICAgICAgICBNZWFuICAgOjIuNzYxICAgTWVhbiAgIDogNy4wMDggIFxuIDNyZCBRdS46ODAgICAgM3JkIFF1LjoxLjAwMDAgICAzcmQgUXUuOjE1LjAwICAgICAzcmQgUXUuOjMuMDAwICAgICAgICAgM3JkIFF1LjozLjAwMCAgIDNyZCBRdS46IDkuMDAwICBcbiBNYXguICAgOjgwICAgIE1heC4gICA6My4wMDAwICAgTWF4LiAgIDo0MC4wMCAgICAgTWF4LiAgIDo2LjAwMCAgICAgICAgIE1heC4gICA6NC4wMDAgICBNYXguICAgOjQwLjAwMCAgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuIFllYXJzSW5DdXJyZW50Um9sZSBZZWFyc1NpbmNlTGFzdFByb21vdGlvbiBZZWFyc1dpdGhDdXJyTWFuYWdlclxuIE1pbi4gICA6IDAuMDAwICAgICBNaW4uICAgOiAwLjAwMCAgICAgICAgICBNaW4uICAgOiAwLjAwMCAgICAgIFxuIDFzdCBRdS46IDIuMDAwICAgICAxc3QgUXUuOiAwLjAwMCAgICAgICAgICAxc3QgUXUuOiAyLjAwMCAgICAgIFxuIE1lZGlhbiA6IDMuMDAwICAgICBNZWRpYW4gOiAxLjAwMCAgICAgICAgICBNZWRpYW4gOiAzLjAwMCAgICAgIFxuIE1lYW4gICA6IDQuMjI5ICAgICBNZWFuICAgOiAyLjE4OCAgICAgICAgICBNZWFuICAgOiA0LjEyMyAgICAgIFxuIDNyZCBRdS46IDcuMDAwICAgICAzcmQgUXUuOiAzLjAwMCAgICAgICAgICAzcmQgUXUuOiA3LjAwMCAgICAgIFxuIE1heC4gICA6MTguMDAwICAgICBNYXguICAgOjE1LjAwMCAgICAgICAgICBNYXguICAgOjE3LjAwMCAgICAgIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuIn0= -->
+<pre><code>      Age        Attrition            BusinessTravel   DailyRate                       Department 
+ Min.   :18.00   No :1233   Non-Travel       : 150   Min.   : 102.0   Human Resources       : 63  
+ 1st Qu.:30.00   Yes: 237   Travel_Frequently: 277   1st Qu.: 465.0   Research &amp; Development:961  
+ Median :36.00              Travel_Rarely    :1043   Median : 802.0   Sales                 :446  
+ Mean   :36.92                                       Mean   : 802.5                               
+ 3rd Qu.:43.00                                       3rd Qu.:1157.0                               
+ Max.   :60.00                                       Max.   :1499.0                               
+                                                                                                  
+ DistanceFromHome   Education              EducationField EmployeeCount EmployeeNumber  
+ Min.   : 1.000   Min.   :1.000   Human Resources : 27    Min.   :1     Min.   :   1.0  
+ 1st Qu.: 2.000   1st Qu.:2.000   Life Sciences   :606    1st Qu.:1     1st Qu.: 491.2  
+ Median : 7.000   Median :3.000   Marketing       :159    Median :1     Median :1020.5  
+ Mean   : 9.193   Mean   :2.913   Medical         :464    Mean   :1     Mean   :1024.9  
+ 3rd Qu.:14.000   3rd Qu.:4.000   Other           : 82    3rd Qu.:1     3rd Qu.:1555.8  
+ Max.   :29.000   Max.   :5.000   Technical Degree:132    Max.   :1     Max.   :2068.0  
+                                                                                        
+ EnvironmentSatisfaction    Gender      HourlyRate     JobInvolvement    JobLevel    
+ Min.   :1.000           Female:588   Min.   : 30.00   Min.   :1.00   Min.   :1.000  
+ 1st Qu.:2.000           Male  :882   1st Qu.: 48.00   1st Qu.:2.00   1st Qu.:1.000  
+ Median :3.000                        Median : 66.00   Median :3.00   Median :2.000  
+ Mean   :2.722                        Mean   : 65.89   Mean   :2.73   Mean   :2.064  
+ 3rd Qu.:4.000                        3rd Qu.: 83.75   3rd Qu.:3.00   3rd Qu.:3.000  
+ Max.   :4.000                        Max.   :100.00   Max.   :4.00   Max.   :5.000  
+                                                                                     
+                      JobRole    JobSatisfaction  MaritalStatus MonthlyIncome    MonthlyRate   
+ Sales Executive          :326   Min.   :1.000   Divorced:327   Min.   : 1009   Min.   : 2094  
+ Research Scientist       :292   1st Qu.:2.000   Married :673   1st Qu.: 2911   1st Qu.: 8047  
+ Laboratory Technician    :259   Median :3.000   Single  :470   Median : 4919   Median :14236  
+ Manufacturing Director   :145   Mean   :2.729                  Mean   : 6503   Mean   :14313  
+ Healthcare Representative:131   3rd Qu.:4.000                  3rd Qu.: 8379   3rd Qu.:20462  
+ Manager                  :102   Max.   :4.000                  Max.   :19999   Max.   :26999  
+ (Other)                  :215                                                                 
+ NumCompaniesWorked Over18   OverTime   PercentSalaryHike PerformanceRating RelationshipSatisfaction
+ Min.   :0.000      Y:1470   No :1054   Min.   :11.00     Min.   :3.000     Min.   :1.000           
+ 1st Qu.:1.000               Yes: 416   1st Qu.:12.00     1st Qu.:3.000     1st Qu.:2.000           
+ Median :2.000                          Median :14.00     Median :3.000     Median :3.000           
+ Mean   :2.693                          Mean   :15.21     Mean   :3.154     Mean   :2.712           
+ 3rd Qu.:4.000                          3rd Qu.:18.00     3rd Qu.:3.000     3rd Qu.:4.000           
+ Max.   :9.000                          Max.   :25.00     Max.   :4.000     Max.   :4.000           
+                                                                                                    
+ StandardHours StockOptionLevel TotalWorkingYears TrainingTimesLastYear WorkLifeBalance YearsAtCompany  
+ Min.   :80    Min.   :0.0000   Min.   : 0.00     Min.   :0.000         Min.   :1.000   Min.   : 0.000  
+ 1st Qu.:80    1st Qu.:0.0000   1st Qu.: 6.00     1st Qu.:2.000         1st Qu.:2.000   1st Qu.: 3.000  
+ Median :80    Median :1.0000   Median :10.00     Median :3.000         Median :3.000   Median : 5.000  
+ Mean   :80    Mean   :0.7939   Mean   :11.28     Mean   :2.799         Mean   :2.761   Mean   : 7.008  
+ 3rd Qu.:80    3rd Qu.:1.0000   3rd Qu.:15.00     3rd Qu.:3.000         3rd Qu.:3.000   3rd Qu.: 9.000  
+ Max.   :80    Max.   :3.0000   Max.   :40.00     Max.   :6.000         Max.   :4.000   Max.   :40.000  
+                                                                                                        
+ YearsInCurrentRole YearsSinceLastPromotion YearsWithCurrManager
+ Min.   : 0.000     Min.   : 0.000          Min.   : 0.000      
+ 1st Qu.: 2.000     1st Qu.: 0.000          1st Qu.: 2.000      
+ Median : 3.000     Median : 1.000          Median : 3.000      
+ Mean   : 4.229     Mean   : 2.188          Mean   : 4.123      
+ 3rd Qu.: 7.000     3rd Qu.: 3.000          3rd Qu.: 7.000      
+ Max.   :18.000     Max.   :15.000          Max.   :17.000      
+                                                                </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<div id="find-out-the-number-of-numerical-and-categorical-features" class="section level3">
-<h3>Find out the number of numerical and categorical features</h3>
+<div id="outlier-detection" class="section level3">
+<h3>Outlier Detection</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnVtX251bWVyaWNhbCA8LSBzdW0oc2FwcGx5KGF0dHJpdGlvbl9kYXRhLCBpcy5udW1lcmljKSlcbm51bV9jYXRlZ29yaWNhbCA8LSBzdW0oc2FwcGx5KGF0dHJpdGlvbl9kYXRhLCBmdW5jdGlvbih4KSBpcy5mYWN0b3IoeCkgfHwgaXMuY2hhcmFjdGVyKHgpKSlcblxuIyBQcmludCB0aGUgY291bnRzXG5jYXQoXCJOdW1iZXIgb2YgbnVtZXJpY2FsIGF0dHJpYnV0ZXM6XCIsIG51bV9udW1lcmljYWwsIFwiIC9cIiwgKG51bV9udW1lcmljYWwvKG51bV9udW1lcmljYWwrbnVtX2NhdGVnb3JpY2FsKSkqMTAwLCBcIiVcXG5cIilcbmBgYCJ9 -->
-<pre class="r"><code>num_numerical &lt;- sum(sapply(attrition_data, is.numeric))
-num_categorical &lt;- sum(sapply(attrition_data, function(x) is.factor(x) || is.character(x)))
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBGdW5jdGlvbiB0byBkZXRlY3Qgb3V0bGllcnMgdXNpbmcgSVFSIG1ldGhvZFxuaXFyX291dGxpZXJzIDwtIGZ1bmN0aW9uKHgpIHtcbiAgUTEgPC0gcXVhbnRpbGUoeCwgMC4yNSwgbmEucm0gPSBUUlVFKVxuICBRMyA8LSBxdWFudGlsZSh4LCAwLjc1LCBuYS5ybSA9IFRSVUUpXG4gIElRUiA8LSBRMyAtIFExXG4gIGxvd2VyX2JvdW5kIDwtIFExIC0gNCAqIElRUlxuICB1cHBlcl9ib3VuZCA8LSBRMyArIDQgKiBJUVJcbiAgb3V0bGllcnMgPC0geCA8IGxvd2VyX2JvdW5kIHwgeCA+IHVwcGVyX2JvdW5kXG4gIHJldHVybihvdXRsaWVycylcbn1cblxuIyBBcHBseSB0aGUgSVFSIG91dGxpZXIgZGV0ZWN0aW9uIHRvIG51bWVyaWNhbCBjb2x1bW5zXG5udW1lcmljYWxfY29sdW1ucyA8LSBhdHRyaXRpb25fZGF0YSAlPiUgc2VsZWN0KHdoZXJlKGlzLm51bWVyaWMpKVxuaXFyX291dGxpZXJzX3Jlc3VsdCA8LSBzYXBwbHkobnVtZXJpY2FsX2NvbHVtbnMsIGlxcl9vdXRsaWVycylcblxuIyBDb3VudCB0aGUgbnVtYmVyIG9mIG91dGxpZXJzIGluIGVhY2ggY29sdW1uXG5vdXRsaWVyc19jb3VudCA8LSBjb2xTdW1zKGlxcl9vdXRsaWVyc19yZXN1bHQpXG5cbiMgUHJpbnQgdGhlIGNvdW50IG9mIG91dGxpZXJzIGZvciBlYWNoIG51bWVyaWNhbCBjb2x1bW5cbm91dGxpZXJzX2NvdW50XG5gYGAifQ== -->
+<pre class="r"><code># Function to detect outliers using IQR method
+iqr_outliers &lt;- function(x) {
+  Q1 &lt;- quantile(x, 0.25, na.rm = TRUE)
+  Q3 &lt;- quantile(x, 0.75, na.rm = TRUE)
+  IQR &lt;- Q3 - Q1
+  lower_bound &lt;- Q1 - 4 * IQR
+  upper_bound &lt;- Q3 + 4 * IQR
+  outliers &lt;- x &lt; lower_bound | x &gt; upper_bound
+  return(outliers)
+}
 
-# Print the counts
-cat(&quot;Number of numerical attributes:&quot;, num_numerical, &quot; /&quot;, (num_numerical/(num_numerical+num_categorical))*100, &quot;%\n&quot;)</code></pre>
+# Apply the IQR outlier detection to numerical columns
+numerical_columns &lt;- attrition_data %&gt;% select(where(is.numeric))
+iqr_outliers_result &lt;- sapply(numerical_columns, iqr_outliers)
+
+# Count the number of outliers in each column
+outliers_count &lt;- colSums(iqr_outliers_result)
+
+# Print the count of outliers for each numerical column
+outliers_count</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIG51bWVyaWNhbCBhdHRyaWJ1dGVzOiAyNiAgLyA3NC4yODU3MSAlXG4ifQ== -->
-<pre><code>Number of numerical attributes: 26  / 74.28571 %</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAgQWdlICAgICAgICAgICAgICAgIERhaWx5UmF0ZSAgICAgICAgIERpc3RhbmNlRnJvbUhvbWUgICAgICAgICAgICAgICAgRWR1Y2F0aW9uIFxuICAgICAgICAgICAgICAgICAgICAgICAwICAgICAgICAgICAgICAgICAgICAgICAgMCAgICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgICAgICAgICAgICAgICAgICAwIFxuICAgICAgICAgICBFbXBsb3llZUNvdW50ICAgICAgICAgICBFbXBsb3llZU51bWJlciAgRW52aXJvbm1lbnRTYXRpc2ZhY3Rpb24gICAgICAgICAgICAgICBIb3VybHlSYXRlIFxuICAgICAgICAgICAgICAgICAgICAgICAwICAgICAgICAgICAgICAgICAgICAgICAgMCAgICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgICAgICAgICAgICAgICAgICAwIFxuICAgICAgICAgIEpvYkludm9sdmVtZW50ICAgICAgICAgICAgICAgICBKb2JMZXZlbCAgICAgICAgICBKb2JTYXRpc2ZhY3Rpb24gICAgICAgICAgICBNb250aGx5SW5jb21lIFxuICAgICAgICAgICAgICAgICAgICAgICAwICAgICAgICAgICAgICAgICAgICAgICAgMCAgICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgICAgICAgICAgICAgICAgICAwIFxuICAgICAgICAgICAgIE1vbnRobHlSYXRlICAgICAgIE51bUNvbXBhbmllc1dvcmtlZCAgICAgICAgUGVyY2VudFNhbGFyeUhpa2UgICAgICAgIFBlcmZvcm1hbmNlUmF0aW5nIFxuICAgICAgICAgICAgICAgICAgICAgICAwICAgICAgICAgICAgICAgICAgICAgICAgMCAgICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgICAgICAgICAgICAgICAgMjI2IFxuUmVsYXRpb25zaGlwU2F0aXNmYWN0aW9uICAgICAgICAgICAgU3RhbmRhcmRIb3VycyAgICAgICAgIFN0b2NrT3B0aW9uTGV2ZWwgICAgICAgIFRvdGFsV29ya2luZ1llYXJzIFxuICAgICAgICAgICAgICAgICAgICAgICAwICAgICAgICAgICAgICAgICAgICAgICAgMCAgICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgICAgICAgICAgICAgICAgICAwIFxuICAgVHJhaW5pbmdUaW1lc0xhc3RZZWFyICAgICAgICAgIFdvcmtMaWZlQmFsYW5jZSAgICAgICAgICAgWWVhcnNBdENvbXBhbnkgICAgICAgWWVhcnNJbkN1cnJlbnRSb2xlIFxuICAgICAgICAgICAgICAgICAgICAgICAwICAgICAgICAgICAgICAgICAgICAgICAgMCAgICAgICAgICAgICAgICAgICAgICAgIDUgICAgICAgICAgICAgICAgICAgICAgICAwIFxuIFllYXJzU2luY2VMYXN0UHJvbW90aW9uICAgICBZZWFyc1dpdGhDdXJyTWFuYWdlciBcbiAgICAgICAgICAgICAgICAgICAgICAgMCAgICAgICAgICAgICAgICAgICAgICAgIDAgXG4ifQ== -->
+<pre><code>                     Age                DailyRate         DistanceFromHome                Education 
+                       0                        0                        0                        0 
+           EmployeeCount           EmployeeNumber  EnvironmentSatisfaction               HourlyRate 
+                       0                        0                        0                        0 
+          JobInvolvement                 JobLevel          JobSatisfaction            MonthlyIncome 
+                       0                        0                        0                        0 
+             MonthlyRate       NumCompaniesWorked        PercentSalaryHike        PerformanceRating 
+                       0                        0                        0                      226 
+RelationshipSatisfaction            StandardHours         StockOptionLevel        TotalWorkingYears 
+                       0                        0                        0                        0 
+   TrainingTimesLastYear          WorkLifeBalance           YearsAtCompany       YearsInCurrentRole 
+                       0                        0                        5                        0 
+ YearsSinceLastPromotion     YearsWithCurrManager 
+                       0                        0 </code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2F0KFwiTnVtYmVyIG9mIGNhdGVnb3JpY2FsIGF0dHJpYnV0ZXM6XCIsIG51bV9jYXRlZ29yaWNhbCwgXCIgL1wiLCAobnVtX2NhdGVnb3JpY2FsLyhudW1fbnVtZXJpY2FsK251bV9jYXRlZ29yaWNhbCkpKjEwMCwgXCIlXFxuXCIpXG5gYGAifQ== -->
-<pre class="r"><code>cat(&quot;Number of categorical attributes:&quot;, num_categorical, &quot; /&quot;, (num_categorical/(num_numerical+num_categorical))*100, &quot;%\n&quot;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDb21iaW5lIHJlc3VsdHMgd2l0aCBvcmlnaW5hbCBkYXRhIHRvIHNob3cgcm93cyB3aXRoIG91dGxpZXJzXG5hdHRyaXRpb25fZGF0YV93aXRoX2lxcl9vdXRsaWVycyA8LSBhdHRyaXRpb25fZGF0YSAlPiVcbiAgbXV0YXRlKGFjcm9zcyh3aGVyZShpcy5udW1lcmljKSwgaXFyX291dGxpZXJzLCAubmFtZXMgPSBcIm91dGxpZXJfe2NvbH1cIikpXG5cbiMgRmlsdGVyIHJvd3Mgd2l0aCBhbnkgb3V0bGllcnNcbnJvd3Nfd2l0aF9pcXJfb3V0bGllcnMgPC0gYXR0cml0aW9uX2RhdGFfd2l0aF9pcXJfb3V0bGllcnMgJT4lXG4gIGZpbHRlcihpZl9hbnkoc3RhcnRzX3dpdGgoXCJvdXRsaWVyX1wiKSwgfiAuID09IFRSVUUpKVxuXG4jIFByaW50IHRoZSBudW1iZXIgb2Ygcm93cyB3aXRoIGF0IGxlYXN0IG9uZSBvdXRsaWVyXG5udW1fcm93c193aXRoX291dGxpZXJzIDwtIG5yb3cocm93c193aXRoX2lxcl9vdXRsaWVycylcbmNhdChcIk51bWJlciBvZiByb3dzIHdpdGggYXQgbGVhc3Qgb25lIG91dGxpZXI6XCIsIG51bV9yb3dzX3dpdGhfb3V0bGllcnMsIFwiIC8gXCIsIG51bV9yb3dzX3dpdGhfb3V0bGllcnMvMTQ3MCoxMDAsIFwiJSBcXG5cIilcbmBgYCJ9 -->
+<pre class="r"><code># Combine results with original data to show rows with outliers
+attrition_data_with_iqr_outliers &lt;- attrition_data %&gt;%
+  mutate(across(where(is.numeric), iqr_outliers, .names = &quot;outlier_{col}&quot;))
+
+# Filter rows with any outliers
+rows_with_iqr_outliers &lt;- attrition_data_with_iqr_outliers %&gt;%
+  filter(if_any(starts_with(&quot;outlier_&quot;), ~ . == TRUE))
+
+# Print the number of rows with at least one outlier
+num_rows_with_outliers &lt;- nrow(rows_with_iqr_outliers)
+cat(&quot;Number of rows with at least one outlier:&quot;, num_rows_with_outliers, &quot; / &quot;, num_rows_with_outliers/1470*100, &quot;% \n&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIGNhdGVnb3JpY2FsIGF0dHJpYnV0ZXM6IDkgIC8gMjUuNzE0MjkgJVxuIn0= -->
-<pre><code>Number of categorical attributes: 9  / 25.71429 %</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIHJvd3Mgd2l0aCBhdCBsZWFzdCBvbmUgb3V0bGllcjogMjMwICAvICAxNS42NDYyNiAlIFxuIn0= -->
+<pre><code>Number of rows with at least one outlier: 230  /  15.64626 % </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-</div>
-<div id="find-possible-missing-values" class="section level3">
-<h3>Find possible missing values</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDaGVjayBmb3IgbWlzc2luZyB2YWx1ZXMgaW4gdGhlIGRhdGFzZXRcbm1pc3NpbmdfdmFsdWVzIDwtIHNhcHBseShhdHRyaXRpb25fZGF0YSwgZnVuY3Rpb24oeCkgc3VtKGlzLm5hKHgpKSlcblxuIyBQcmludCBjb2x1bW5zIHdpdGggbWlzc2luZyB2YWx1ZXNcbm1pc3NpbmdfdmFsdWVzW21pc3NpbmdfdmFsdWVzID4gMF1cbmBgYCJ9 -->
-<pre class="r"><code># Check for missing values in the dataset
-missing_values &lt;- sapply(attrition_data, function(x) sum(is.na(x)))
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBGdW5jdGlvbiB0byBkZXRlY3Qgb3V0bGllcnMgdXNpbmcgWi1zY29yZSBtZXRob2Rcbnpfc2NvcmVfb3V0bGllcnMgPC0gZnVuY3Rpb24oeCwgdGhyZXNob2xkID0gNCkge1xuICB6X3Njb3JlcyA8LSBzY2FsZSh4KVxuICBvdXRsaWVycyA8LSBhYnMoel9zY29yZXMpID4gdGhyZXNob2xkXG4gIHJldHVybihvdXRsaWVycylcbn1cblxuIyBBcHBseSB0aGUgWi1zY29yZSBvdXRsaWVyIGRldGVjdGlvbiB0byBudW1lcmljYWwgY29sdW1uc1xuel9zY29yZV9vdXRsaWVyc19yZXN1bHQgPC0gc2FwcGx5KG51bWVyaWNhbF9jb2x1bW5zLCB6X3Njb3JlX291dGxpZXJzKVxuXG4jIENvdW50IHRoZSBudW1iZXIgb2Ygb3V0bGllcnMgaW4gZWFjaCBjb2x1bW5cbnpfb3V0bGllcnNfY291bnQgPC0gY29sU3Vtcyh6X3Njb3JlX291dGxpZXJzX3Jlc3VsdClcblxuIyBQcmludCB0aGUgY291bnQgb2Ygb3V0bGllcnMgZm9yIGVhY2ggbnVtZXJpY2FsIGNvbHVtblxuel9vdXRsaWVyc19jb3VudFxuYGBgIn0= -->
+<pre class="r"><code># Function to detect outliers using Z-score method
+z_score_outliers &lt;- function(x, threshold = 4) {
+  z_scores &lt;- scale(x)
+  outliers &lt;- abs(z_scores) &gt; threshold
+  return(outliers)
+}
 
-# Print columns with missing values
-missing_values[missing_values &gt; 0]</code></pre>
+# Apply the Z-score outlier detection to numerical columns
+z_score_outliers_result &lt;- sapply(numerical_columns, z_score_outliers)
+
+# Count the number of outliers in each column
+z_outliers_count &lt;- colSums(z_score_outliers_result)
+
+# Print the count of outliers for each numerical column
+z_outliers_count</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoibmFtZWQgaW50ZWdlcigwKVxuIn0= -->
-<pre><code>named integer(0)</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAgQWdlICAgICAgICAgICAgICAgIERhaWx5UmF0ZSAgICAgICAgIERpc3RhbmNlRnJvbUhvbWUgICAgICAgICAgICAgICAgRWR1Y2F0aW9uIFxuICAgICAgICAgICAgICAgICAgICAgICAwICAgICAgICAgICAgICAgICAgICAgICAgMCAgICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgICAgICAgICAgICAgICAgICAwIFxuICAgICAgICAgICBFbXBsb3llZUNvdW50ICAgICAgICAgICBFbXBsb3llZU51bWJlciAgRW52aXJvbm1lbnRTYXRpc2ZhY3Rpb24gICAgICAgICAgICAgICBIb3VybHlSYXRlIFxuICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICAgICAgICAgICAgICAgICAgMCAgICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgICAgICAgICAgICAgICAgICAwIFxuICAgICAgICAgIEpvYkludm9sdmVtZW50ICAgICAgICAgICAgICAgICBKb2JMZXZlbCAgICAgICAgICBKb2JTYXRpc2ZhY3Rpb24gICAgICAgICAgICBNb250aGx5SW5jb21lIFxuICAgICAgICAgICAgICAgICAgICAgICAwICAgICAgICAgICAgICAgICAgICAgICAgMCAgICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgICAgICAgICAgICAgICAgICAwIFxuICAgICAgICAgICAgIE1vbnRobHlSYXRlICAgICAgIE51bUNvbXBhbmllc1dvcmtlZCAgICAgICAgUGVyY2VudFNhbGFyeUhpa2UgICAgICAgIFBlcmZvcm1hbmNlUmF0aW5nIFxuICAgICAgICAgICAgICAgICAgICAgICAwICAgICAgICAgICAgICAgICAgICAgICAgMCAgICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgICAgICAgICAgICAgICAgICAwIFxuUmVsYXRpb25zaGlwU2F0aXNmYWN0aW9uICAgICAgICAgICAgU3RhbmRhcmRIb3VycyAgICAgICAgIFN0b2NrT3B0aW9uTGV2ZWwgICAgICAgIFRvdGFsV29ya2luZ1llYXJzIFxuICAgICAgICAgICAgICAgICAgICAgICAwICAgICAgICAgICAgICAgICAgICAgICBOQSAgICAgICAgICAgICAgICAgICAgICAgIDAgICAgICAgICAgICAgICAgICAgICAgICAwIFxuICAgVHJhaW5pbmdUaW1lc0xhc3RZZWFyICAgICAgICAgIFdvcmtMaWZlQmFsYW5jZSAgICAgICAgICAgWWVhcnNBdENvbXBhbnkgICAgICAgWWVhcnNJbkN1cnJlbnRSb2xlIFxuICAgICAgICAgICAgICAgICAgICAgICAwICAgICAgICAgICAgICAgICAgICAgICAgMCAgICAgICAgICAgICAgICAgICAgICAgMTMgICAgICAgICAgICAgICAgICAgICAgICAwIFxuIFllYXJzU2luY2VMYXN0UHJvbW90aW9uICAgICBZZWFyc1dpdGhDdXJyTWFuYWdlciBcbiAgICAgICAgICAgICAgICAgICAgICAgMCAgICAgICAgICAgICAgICAgICAgICAgIDAgXG4ifQ== -->
+<pre><code>                     Age                DailyRate         DistanceFromHome                Education 
+                       0                        0                        0                        0 
+           EmployeeCount           EmployeeNumber  EnvironmentSatisfaction               HourlyRate 
+                      NA                        0                        0                        0 
+          JobInvolvement                 JobLevel          JobSatisfaction            MonthlyIncome 
+                       0                        0                        0                        0 
+             MonthlyRate       NumCompaniesWorked        PercentSalaryHike        PerformanceRating 
+                       0                        0                        0                        0 
+RelationshipSatisfaction            StandardHours         StockOptionLevel        TotalWorkingYears 
+                       0                       NA                        0                        0 
+   TrainingTimesLastYear          WorkLifeBalance           YearsAtCompany       YearsInCurrentRole 
+                       0                        0                       13                        0 
+ YearsSinceLastPromotion     YearsWithCurrManager 
+                       0                        0 </code></pre>
 <!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDb21iaW5lIHJlc3VsdHMgd2l0aCBvcmlnaW5hbCBkYXRhIHRvIHNob3cgcm93cyB3aXRoIG91dGxpZXJzXG5hdHRyaXRpb25fZGF0YV93aXRoX3pfb3V0bGllcnMgPC0gYXR0cml0aW9uX2RhdGEgJT4lXG4gIG11dGF0ZShhY3Jvc3Mod2hlcmUoaXMubnVtZXJpYyksIHpfc2NvcmVfb3V0bGllcnMsIC5uYW1lcyA9IFwib3V0bGllcl97Y29sfVwiKSlcblxuIyBGaWx0ZXIgcm93cyB3aXRoIGFueSBvdXRsaWVyc1xucm93c193aXRoX3pfb3V0bGllcnMgPC0gYXR0cml0aW9uX2RhdGFfd2l0aF96X291dGxpZXJzICU+JVxuICBmaWx0ZXIoaWZfYW55KHN0YXJ0c193aXRoKFwib3V0bGllcl9cIiksIH4gLiA9PSBUUlVFKSlcblxuIyBQcmludCB0aGUgbnVtYmVyIG9mIHJvd3Mgd2l0aCBhdCBsZWFzdCBvbmUgb3V0bGllclxubnVtX3Jvd3Nfd2l0aF96X291dGxpZXJzIDwtIG5yb3cocm93c193aXRoX3pfb3V0bGllcnMpXG5jYXQoXCJOdW1iZXIgb2Ygcm93cyB3aXRoIGF0IGxlYXN0IG9uZSBaLXNjb3JlIG91dGxpZXI6XCIsIG51bV9yb3dzX3dpdGhfel9vdXRsaWVycywgXCIgLyBcIiwgbnVtX3Jvd3Nfd2l0aF96X291dGxpZXJzLzE0NzAqMTAwLCBcIiUgXFxuXCIpXG5gYGAifQ== -->
+<pre class="r"><code># Combine results with original data to show rows with outliers
+attrition_data_with_z_outliers &lt;- attrition_data %&gt;%
+  mutate(across(where(is.numeric), z_score_outliers, .names = &quot;outlier_{col}&quot;))
+
+# Filter rows with any outliers
+rows_with_z_outliers &lt;- attrition_data_with_z_outliers %&gt;%
+  filter(if_any(starts_with(&quot;outlier_&quot;), ~ . == TRUE))
+
+# Print the number of rows with at least one outlier
+num_rows_with_z_outliers &lt;- nrow(rows_with_z_outliers)
+cat(&quot;Number of rows with at least one Z-score outlier:&quot;, num_rows_with_z_outliers, &quot; / &quot;, num_rows_with_z_outliers/1470*100, &quot;% \n&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTnVtYmVyIG9mIHJvd3Mgd2l0aCBhdCBsZWFzdCBvbmUgWi1zY29yZSBvdXRsaWVyOiAxMyAgLyAgMC44ODQzNTM3ICUgXG4ifQ== -->
+<pre><code>Number of rows with at least one Z-score outlier: 13  /  0.8843537 % </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBEaXNwbGF5IHJvd3Mgd2l0aCBvdXRsaWVyc1xucm93c193aXRoX3pfb3V0bGllcnNcbmBgYCJ9 -->
+<pre class="r"><code># Display rows with outliers
+rows_with_z_outliers</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MTMsIm5jb2wiOjYxLCJzdW1tYXJ5Ijp7IkRlc2NyaXB0aW9uIjpbImRmIFsxMyDDlyA2MV0iXX19LCJyZGYiOiJINHNJQUFBQUFBQUFCdTFaelc4Y05SVDNmbVNUYkpwa2s5SW1yVURkb2xJcXBFUkFvYlNJQ3FYZHBFbkpwbVUzcU0yRnlKMTFzbFptN2NVenN6UVNoNHFQQTJmK0JpNUlISkM0SUs2YytBczQ4V2NnaE5TVTUxbmI0NW5NSnJ0cGhGQ1ZTQytlOStubjU1L3RHVyt0OHZCcThXRVJJWlJEK1d3VzVZYmdFUTE5c3I0MGR4MkJCSmdNeXFOUjJUNEdvOVB3Y0JOb1hOSDdpdDVSOUI3UTJ3bitxcEs5cS9oUzZOc05tbDNqNmltM1FieDl3bjZmK25aT0dNYVRHVjhYdUVQY3pSb1d4TjBkV0ZoYzQyeXVxempJYkVvSmx3VDVMQ0RNLzUvMlpPWTQrd08wMzBIN0s1UXZCemo0RFlEeEovQXRlSmJJK1Fua0FKUk1GV1NiUUQ4bXlqcFV4NjZwK3RrYThRZ1dUck44dVZ3aDBCOXZ0eUMxdnJRREJKcGNEbHFZbGNHR0I4SXhUckVJengvdUdBWVRMU1ZaeXBsd3ZVRU5WWnRUSlBrUjZTVERLdjY4NVp0UGtQYkxxemc2MXBCRjloUU5WMG1ET3RoTlo4ZFg2UllwMXgxS1dEVDJWT0hCY1VhcldPd1FuN0x0WG9KK09rN1lsTmFKMDJSU0FFWGVGb1RzangzVktYTUUwcjVmQVgwUElya0VWb0E2TUExZlExbGhYdklUUUh0UTFtV0VDcUF2WEFKNkkyVitjaXFtbmhlYnp5WElucDk4RmNDaW5ndExwQlZ4dG1iUTU4RWpwWGxFbzN3TjZGT2dCYUI3UUI4RE9VQVhnRzRvL1RyUVE2QTFvQThzWHh2cDJRU2ZzV1FaeThhdWJoTGRRMHF1MjN6Q3pxN3VaTGdVeTR1UGlSUDR0S09IZDI2WllOZHZPckFmd3NwdkMxak56TWVXd1hBVk03eE54UEd6ZzNZOVpiYWFDaFhFOGJsV25BVzdZQXM3ZmlCZ0pTUzFKa3A4SG13MDJydFIzcXE5WFZPN2xvVTY5T05hYVFwQlNTT2RqZHNPNHBsZ1J5cTB3MkZmN3NYM0Y5b1U0ZHFiQ0YyQnBid0d3TDM3QlJDQS9NNHM0UG9QaEtyZndJc011RjM3SGFIckh5SDAraThJclg0WitXNXVRUE10Rkg0ZW9kcGxoRmIrQWZ4L0NIWVF2L0VYckllL0VhcjhESGJnY3dPMjhJMm5WdkdSS25TeVRTT3RzNHVmMmZoUEgzcTl5aDN5NG5XVWw3ViszS002U2pvRkJOc3ltbGJ0bUtKSlJXUEtUZzdoRE5xL0VmVkwrWlRGazl6U05hOFhrRzV6bHUvOUkxQVNOeG9YQ0tYangrYTFMMkFVWFFGNkZlZ2k2bTdTWll2WHJaWmRzbnp0MTRvczJyOTUyeHU2cm9mMnRXMlRyeXk5YW0wZk5GZFVYaGRWVGpxL3NpVXZXM3I3TlV1U3hNV3dlcGI1RjFBWEo2T0tDa3BmU0l4WFkyZFM1VnBVOG9LU0ljdldQcVJHbEkyTWZVckpaUHlTa2lFVlMvY3YzN3lMS0pyZkFmOWluMjY1Qm0yaHFPdzZ2YjNuN3lMNzdFV0srd1QrRFVvdlloMU80cDdFUFlsN3N1K2N4RDAwN2hGdUZGN0lPaHh6M05qcnl4RERyZkNxcklUazdiTjZwMW5ZTmxjOUM3NHZxRTg1VTRLSlc0RkhHZkc4MkIzcGFBVlRkN2VHZmUxWHJKQTJGcjUxS1ZlcVVNL0h6Q0ZMZ3JlV2VjdjBzTmdJSEd6M1lBUkxsTGo2VTNKOHNkVjIrUzRodDNsZ1lrNW80VnJRZW1TKzJHY1dXWWNLem1UbmRRamt5WS8wS0g3aERtRU5ZMXhjNW9HSXBUNXhsejlhWVIzdWRvaVYvZ2hJVjBrMDRtSGdhOXg4K0U0Q205TFhPSHdBVXgrN2RSLzdnYm5lcTNMbU45M2RGZVpFWlJoVFFpdVJhUmpWYmQ1cVkwYUo5NENMbmVpaisxNkhpTGV1NjlRa3QwNU5xS243QkQ3UTVkaGRMSGFYNlk2dDJPS2lKV2NCK29udUJtZHJ4QTByN2pWcE8yMFlrRDlyWU5HUXhkTERLTlY5N3V6Y2Ewczd1ekpUNnh4R0xQT0ZEallJTmc1bkFES1VnVkRtNnExaXo1ZGFYVURwSU84a2IwSFdrSitlakREQWd0K3RnNzVQbnc2bEsreDJJQVFNMUpxSG1WQlRweEJCZG5BZnNNYXRnYndVcWg5UXZ5bGQ0eGM5WXp6d1hVckVab1QrS1MxS3dudldLTkpCYlJ5VDRENWpGQ2x3UHB0VXhtQjl3V2dQaFBlME50c0hiQk0rRmVBbFMydFA1NHdsVCtuT0RDZ04xS2NUU2l1WjgxclZFK1RudEVVdk9Oc0dxYkF1YTRORDRHM0drQWJ6MlVpWkNuZVRSUy9ZdjJJTURvQy9xWEw2TWpCVGw3b2N6c2UwYWN2aVFzeWk1L0o0T1dhV1hDYnhrMk5VOE0vbjlla1JIak5QdW1mUGVQS0ljVnpzNlNOR0M0c043T1A1TFFIK0thZlNNQS9MREU1WithdG9JZUdjRVFsQktXQXlrOGFjMHd6WXpoenNqSEY5cmgzK1ZLSHZFNUIxSU5yM0R6ZTdhZVNlS2ZlQzNtNEoyNFl6VDQvSHhZL003T2NhcEtPM0tpaElXSS81dHFCbVdSVkI2czM3RWh0YTRuQlhTOEtobzcxL0FkbzdkUzRySGdBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Age"],"name":[1],"type":["int"],"align":["right"]},{"label":["Attrition"],"name":[2],"type":["chr"],"align":["left"]},{"label":["BusinessTravel"],"name":[3],"type":["chr"],"align":["left"]},{"label":["DailyRate"],"name":[4],"type":["int"],"align":["right"]},{"label":["Department"],"name":[5],"type":["chr"],"align":["left"]},{"label":["DistanceFromHome"],"name":[6],"type":["int"],"align":["right"]},{"label":["Education"],"name":[7],"type":["int"],"align":["right"]},{"label":["EducationField"],"name":[8],"type":["chr"],"align":["left"]},{"label":["EmployeeCount"],"name":[9],"type":["int"],"align":["right"]},{"label":["EmployeeNumber"],"name":[10],"type":["int"],"align":["right"]},{"label":["EnvironmentSatisfaction"],"name":[11],"type":["int"],"align":["right"]},{"label":["Gender"],"name":[12],"type":["chr"],"align":["left"]},{"label":["HourlyRate"],"name":[13],"type":["int"],"align":["right"]},{"label":["JobInvolvement"],"name":[14],"type":["int"],"align":["right"]},{"label":["JobLevel"],"name":[15],"type":["int"],"align":["right"]},{"label":["JobRole"],"name":[16],"type":["chr"],"align":["left"]},{"label":["JobSatisfaction"],"name":[17],"type":["int"],"align":["right"]},{"label":["MaritalStatus"],"name":[18],"type":["chr"],"align":["left"]},{"label":["MonthlyIncome"],"name":[19],"type":["int"],"align":["right"]},{"label":["MonthlyRate"],"name":[20],"type":["int"],"align":["right"]},{"label":["NumCompaniesWorked"],"name":[21],"type":["int"],"align":["right"]},{"label":["Over18"],"name":[22],"type":["chr"],"align":["left"]},{"label":["OverTime"],"name":[23],"type":["chr"],"align":["left"]},{"label":["PercentSalaryHike"],"name":[24],"type":["int"],"align":["right"]},{"label":["PerformanceRating"],"name":[25],"type":["int"],"align":["right"]},{"label":["RelationshipSatisfaction"],"name":[26],"type":["int"],"align":["right"]},{"label":["StandardHours"],"name":[27],"type":["int"],"align":["right"]},{"label":["StockOptionLevel"],"name":[28],"type":["int"],"align":["right"]},{"label":["TotalWorkingYears"],"name":[29],"type":["int"],"align":["right"]},{"label":["TrainingTimesLastYear"],"name":[30],"type":["int"],"align":["right"]},{"label":["WorkLifeBalance"],"name":[31],"type":["int"],"align":["right"]},{"label":["YearsAtCompany"],"name":[32],"type":["int"],"align":["right"]},{"label":["YearsInCurrentRole"],"name":[33],"type":["int"],"align":["right"]},{"label":["YearsSinceLastPromotion"],"name":[34],"type":["int"],"align":["right"]},{"label":["YearsWithCurrManager"],"name":[35],"type":["int"],"align":["right"]},{"label":["outlier_Age"],"name":[36],"type":["lgl"],"align":["right"]},{"label":["outlier_DailyRate"],"name":[37],"type":["lgl"],"align":["right"]},{"label":["outlier_DistanceFromHome"],"name":[38],"type":["lgl"],"align":["right"]},{"label":["outlier_Education"],"name":[39],"type":["lgl"],"align":["right"]},{"label":["outlier_EmployeeCount"],"name":[40],"type":["lgl"],"align":["right"]},{"label":["outlier_EmployeeNumber"],"name":[41],"type":["lgl"],"align":["right"]},{"label":["outlier_EnvironmentSatisfaction"],"name":[42],"type":["lgl"],"align":["right"]},{"label":["outlier_HourlyRate"],"name":[43],"type":["lgl"],"align":["right"]},{"label":["outlier_JobInvolvement"],"name":[44],"type":["lgl"],"align":["right"]},{"label":["outlier_JobLevel"],"name":[45],"type":["lgl"],"align":["right"]},{"label":["outlier_JobSatisfaction"],"name":[46],"type":["lgl"],"align":["right"]},{"label":["outlier_MonthlyIncome"],"name":[47],"type":["lgl"],"align":["right"]},{"label":["outlier_MonthlyRate"],"name":[48],"type":["lgl"],"align":["right"]},{"label":["outlier_NumCompaniesWorked"],"name":[49],"type":["lgl"],"align":["right"]},{"label":["outlier_PercentSalaryHike"],"name":[50],"type":["lgl"],"align":["right"]},{"label":["outlier_PerformanceRating"],"name":[51],"type":["lgl"],"align":["right"]},{"label":["outlier_RelationshipSatisfaction"],"name":[52],"type":["lgl"],"align":["right"]},{"label":["outlier_StandardHours"],"name":[53],"type":["lgl"],"align":["right"]},{"label":["outlier_StockOptionLevel"],"name":[54],"type":["lgl"],"align":["right"]},{"label":["outlier_TotalWorkingYears"],"name":[55],"type":["lgl"],"align":["right"]},{"label":["outlier_TrainingTimesLastYear"],"name":[56],"type":["lgl"],"align":["right"]},{"label":["outlier_WorkLifeBalance"],"name":[57],"type":["lgl"],"align":["right"]},{"label":["outlier_YearsAtCompany"],"name":[58],"type":["lgl"],"align":["right"]},{"label":["outlier_YearsInCurrentRole"],"name":[59],"type":["lgl"],"align":["right"]},{"label":["outlier_YearsSinceLastPromotion"],"name":[60],"type":["lgl"],"align":["right"]},{"label":["outlier_YearsWithCurrManager"],"name":[61],"type":["lgl"],"align":["right"]}],"data":[{"1":"58","2":"No","3":"Travel_Rarely","4":"682","5":"Sales","6":"10","7":"4","8":"Medical","9":"1","10":"131","11":"4","12":"Male","13":"37","14":"3","15":"4","16":"Sales Executive","17":"3","18":"Single","19":"13872","20":"24409","21":"0","22":"Y","23":"No","24":"13","25":"3","26":"3","27":"80","28":"0","29":"38","30":"1","31":"2","32":"37","33":"10","34":"1","35":"8","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"FALSE","43":"FALSE","44":"FALSE","45":"FALSE","46":"FALSE","47":"FALSE","48":"FALSE","49":"FALSE","50":"FALSE","51":"FALSE","52":"FALSE","53":"NA","54":"FALSE","55":"FALSE","56":"FALSE","57":"FALSE","58":"TRUE","59":"FALSE","60":"FALSE","61":"FALSE"},{"1":"58","2":"Yes","3":"Travel_Rarely","4":"147","5":"Research & Development","6":"23","7":"4","8":"Medical","9":"1","10":"165","11":"4","12":"Female","13":"94","14":"3","15":"3","16":"Healthcare Representative","17":"4","18":"Married","19":"10312","20":"3465","21":"1","22":"Y","23":"No","24":"12","25":"3","26":"4","27":"80","28":"1","29":"40","30":"3","31":"2","32":"40","33":"10","34":"15","35":"6","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"FALSE","43":"FALSE","44":"FALSE","45":"FALSE","46":"FALSE","47":"FALSE","48":"FALSE","49":"FALSE","50":"FALSE","51":"FALSE","52":"FALSE","53":"NA","54":"FALSE","55":"FALSE","56":"FALSE","57":"FALSE","58":"TRUE","59":"FALSE","60":"FALSE","61":"FALSE"},{"1":"52","2":"No","3":"Travel_Rarely","4":"699","5":"Research & Development","6":"1","7":"4","8":"Life Sciences","9":"1","10":"259","11":"3","12":"Male","13":"65","14":"2","15":"5","16":"Manager","17":"3","18":"Married","19":"19999","20":"5678","21":"0","22":"Y","23":"No","24":"14","25":"3","26":"1","27":"80","28":"1","29":"34","30":"5","31":"3","32":"33","33":"18","34":"11","35":"9","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"FALSE","43":"FALSE","44":"FALSE","45":"FALSE","46":"FALSE","47":"FALSE","48":"FALSE","49":"FALSE","50":"FALSE","51":"FALSE","52":"FALSE","53":"NA","54":"FALSE","55":"FALSE","56":"FALSE","57":"FALSE","58":"TRUE","59":"FALSE","60":"FALSE","61":"FALSE"},{"1":"52","2":"No","3":"Non-Travel","4":"771","5":"Sales","6":"2","7":"4","8":"Life Sciences","9":"1","10":"329","11":"1","12":"Male","13":"79","14":"2","15":"5","16":"Manager","17":"3","18":"Single","19":"19068","20":"21030","21":"1","22":"Y","23":"Yes","24":"18","25":"3","26":"4","27":"80","28":"0","29":"33","30":"2","31":"4","32":"33","33":"7","34":"15","35":"12","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"FALSE","43":"FALSE","44":"FALSE","45":"FALSE","46":"FALSE","47":"FALSE","48":"FALSE","49":"FALSE","50":"FALSE","51":"FALSE","52":"FALSE","53":"NA","54":"FALSE","55":"FALSE","56":"FALSE","57":"FALSE","58":"TRUE","59":"FALSE","60":"FALSE","61":"FALSE"},{"1":"55","2":"No","3":"Travel_Rarely","4":"452","5":"Research & Development","6":"1","7":"3","8":"Medical","9":"1","10":"374","11":"4","12":"Male","13":"81","14":"3","15":"5","16":"Manager","17":"1","18":"Single","19":"19045","20":"18938","21":"0","22":"Y","23":"Yes","24":"14","25":"3","26":"3","27":"80","28":"0","29":"37","30":"2","31":"3","32":"36","33":"10","34":"4","35":"13","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"FALSE","43":"FALSE","44":"FALSE","45":"FALSE","46":"FALSE","47":"FALSE","48":"FALSE","49":"FALSE","50":"FALSE","51":"FALSE","52":"FALSE","53":"NA","54":"FALSE","55":"FALSE","56":"FALSE","57":"FALSE","58":"TRUE","59":"FALSE","60":"FALSE","61":"FALSE"},{"1":"50","2":"No","3":"Travel_Frequently","4":"1246","5":"Human Resources","6":"3","7":"3","8":"Medical","9":"1","10":"644","11":"1","12":"Male","13":"99","14":"3","15":"5","16":"Manager","17":"2","18":"Married","19":"18200","20":"7999","21":"1","22":"Y","23":"No","24":"11","25":"3","26":"3","27":"80","28":"1","29":"32","30":"2","31":"3","32":"32","33":"5","34":"10","35":"7","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"FALSE","43":"FALSE","44":"FALSE","45":"FALSE","46":"FALSE","47":"FALSE","48":"FALSE","49":"FALSE","50":"FALSE","51":"FALSE","52":"FALSE","53":"NA","54":"FALSE","55":"FALSE","56":"FALSE","57":"FALSE","58":"TRUE","59":"FALSE","60":"FALSE","61":"FALSE"},{"1":"52","2":"No","3":"Travel_Rarely","4":"621","5":"Sales","6":"3","7":"4","8":"Marketing","9":"1","10":"776","11":"3","12":"Male","13":"31","14":"2","15":"4","16":"Manager","17":"1","18":"Married","19":"16856","20":"10084","21":"1","22":"Y","23":"No","24":"11","25":"3","26":"1","27":"80","28":"0","29":"34","30":"3","31":"4","32":"34","33":"6","34":"1","35":"16","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"FALSE","43":"FALSE","44":"FALSE","45":"FALSE","46":"FALSE","47":"FALSE","48":"FALSE","49":"FALSE","50":"FALSE","51":"FALSE","52":"FALSE","53":"NA","54":"FALSE","55":"FALSE","56":"FALSE","57":"FALSE","58":"TRUE","59":"FALSE","60":"FALSE","61":"FALSE"},{"1":"52","2":"Yes","3":"Travel_Rarely","4":"266","5":"Sales","6":"2","7":"1","8":"Marketing","9":"1","10":"1038","11":"1","12":"Female","13":"57","14":"1","15":"5","16":"Manager","17":"4","18":"Married","19":"19845","20":"25846","21":"1","22":"Y","23":"No","24":"15","25":"3","26":"4","27":"80","28":"1","29":"33","30":"3","31":"3","32":"32","33":"14","34":"6","35":"9","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"FALSE","43":"FALSE","44":"FALSE","45":"FALSE","46":"FALSE","47":"FALSE","48":"FALSE","49":"FALSE","50":"FALSE","51":"FALSE","52":"FALSE","53":"NA","54":"FALSE","55":"FALSE","56":"FALSE","57":"FALSE","58":"TRUE","59":"FALSE","60":"FALSE","61":"FALSE"},{"1":"55","2":"No","3":"Non-Travel","4":"177","5":"Research & Development","6":"8","7":"1","8":"Medical","9":"1","10":"1278","11":"4","12":"Male","13":"37","14":"2","15":"4","16":"Healthcare Representative","17":"2","18":"Divorced","19":"13577","20":"25592","21":"1","22":"Y","23":"Yes","24":"15","25":"3","26":"4","27":"80","28":"1","29":"34","30":"3","31":"3","32":"33","33":"9","34":"15","35":"0","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"FALSE","43":"FALSE","44":"FALSE","45":"FALSE","46":"FALSE","47":"FALSE","48":"FALSE","49":"FALSE","50":"FALSE","51":"FALSE","52":"FALSE","53":"NA","54":"FALSE","55":"FALSE","56":"FALSE","57":"FALSE","58":"TRUE","59":"FALSE","60":"FALSE","61":"FALSE"},{"1":"51","2":"No","3":"Travel_Rarely","4":"770","5":"Human Resources","6":"5","7":"3","8":"Life Sciences","9":"1","10":"1352","11":"3","12":"Male","13":"84","14":"3","15":"4","16":"Manager","17":"2","18":"Divorced","19":"14026","20":"17588","21":"1","22":"Y","23":"Yes","24":"11","25":"3","26":"2","27":"80","28":"1","29":"33","30":"2","31":"3","32":"33","33":"9","34":"0","35":"10","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"FALSE","43":"FALSE","44":"FALSE","45":"FALSE","46":"FALSE","47":"FALSE","48":"FALSE","49":"FALSE","50":"FALSE","51":"FALSE","52":"FALSE","53":"NA","54":"FALSE","55":"FALSE","56":"FALSE","57":"FALSE","58":"TRUE","59":"FALSE","60":"FALSE","61":"FALSE"},{"1":"50","2":"No","3":"Travel_Frequently","4":"333","5":"Research & Development","6":"22","7":"5","8":"Medical","9":"1","10":"1539","11":"3","12":"Male","13":"88","14":"1","15":"4","16":"Research Director","17":"4","18":"Single","19":"14411","20":"24450","21":"1","22":"Y","23":"Yes","24":"13","25":"3","26":"4","27":"80","28":"0","29":"32","30":"2","31":"3","32":"32","33":"6","34":"13","35":"9","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"FALSE","43":"FALSE","44":"FALSE","45":"FALSE","46":"FALSE","47":"FALSE","48":"FALSE","49":"FALSE","50":"FALSE","51":"FALSE","52":"FALSE","53":"NA","54":"FALSE","55":"FALSE","56":"FALSE","57":"FALSE","58":"TRUE","59":"FALSE","60":"FALSE","61":"FALSE"},{"1":"53","2":"Yes","3":"Travel_Rarely","4":"607","5":"Research & Development","6":"2","7":"5","8":"Technical Degree","9":"1","10":"1572","11":"3","12":"Female","13":"78","14":"2","15":"3","16":"Manufacturing Director","17":"4","18":"Married","19":"10169","20":"14618","21":"0","22":"Y","23":"No","24":"16","25":"3","26":"2","27":"80","28":"1","29":"34","30":"4","31":"3","32":"33","33":"7","34":"1","35":"9","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"FALSE","43":"FALSE","44":"FALSE","45":"FALSE","46":"FALSE","47":"FALSE","48":"FALSE","49":"FALSE","50":"FALSE","51":"FALSE","52":"FALSE","53":"NA","54":"FALSE","55":"FALSE","56":"FALSE","57":"FALSE","58":"TRUE","59":"FALSE","60":"FALSE","61":"FALSE"},{"1":"55","2":"No","3":"Travel_Rarely","4":"685","5":"Sales","6":"26","7":"5","8":"Marketing","9":"1","10":"1578","11":"3","12":"Male","13":"60","14":"2","15":"5","16":"Manager","17":"4","18":"Married","19":"19586","20":"23037","21":"1","22":"Y","23":"No","24":"21","25":"4","26":"3","27":"80","28":"1","29":"36","30":"3","31":"3","32":"36","33":"6","34":"2","35":"13","36":"FALSE","37":"FALSE","38":"FALSE","39":"FALSE","40":"NA","41":"FALSE","42":"FALSE","43":"FALSE","44":"FALSE","45":"FALSE","46":"FALSE","47":"FALSE","48":"FALSE","49":"FALSE","50":"FALSE","51":"FALSE","52":"FALSE","53":"NA","54":"FALSE","55":"FALSE","56":"FALSE","57":"FALSE","58":"TRUE","59":"FALSE","60":"FALSE","61":"FALSE"}],"options":{"columns":{"min":{},"max":[10],"total":[61]},"rows":{"min":[10],"max":[10],"total":[13]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTkFcbmBgYCJ9 -->
+<pre class="r"><code>NA</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>After this we can conclude that there is no missing data in our
-dataset.</p>
+<p>We will proceed with all data as a closer look on the identified
+outliers by the z-Score method revealed only high, but reasonable years
+of working with one company.</p>
 </div>
-</div>
-<div id="section" class="section level2">
-<h2></h2>
+<div id="preprocessing" class="section level3">
+<h3>Preprocessing</h3>
+<p>We want to scale our numerical features to have equal influences on
+the models and encode our categorical features.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTY2FsZSBudW1lcmljYWwgY29sdW1uc1xucHJlcHJvY2Vzc19wYXJhbXMgPC0gcHJlUHJvY2VzcyhhdHRyaXRpb25fZGF0YSAlPiUgc2VsZWN0KHdoZXJlKGlzLm51bWVyaWMpKSwgbWV0aG9kID0gYyhcImNlbnRlclwiLCBcInNjYWxlXCIpKVxuYGBgIn0= -->
+<pre class="r"><code># Scale numerical columns
+preprocess_params &lt;- preProcess(attrition_data %&gt;% select(where(is.numeric)), method = c(&quot;center&quot;, &quot;scale&quot;))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBpbiBwcmVQcm9jZXNzLmRlZmF1bHQoYXR0cml0aW9uX2RhdGEgJT4lIHNlbGVjdCh3aGVyZShpcy5udW1lcmljKSksICA6XG4gIFRoZXNlIHZhcmlhYmxlcyBoYXZlIHplcm8gdmFyaWFuY2VzOiBFbXBsb3llZUNvdW50LCBTdGFuZGFyZEhvdXJzXG4ifQ== -->
+<pre><code>Warning in preProcess.default(attrition_data %&gt;% select(where(is.numeric)),  :
+  These variables have zero variances: EmployeeCount, StandardHours</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2NhbGVkX251bWVyaWNhbCA8LSBwcmVkaWN0KHByZXByb2Nlc3NfcGFyYW1zLCBhdHRyaXRpb25fZGF0YSAlPiUgc2VsZWN0KHdoZXJlKGlzLm51bWVyaWMpKSlcblxuIyBBZGQgdGhlIHNjYWxlZCBudW1lcmljYWwgY29sdW1ucyBiYWNrIHRvIHRoZSBkYXRhc2V0XG5hdHRyaXRpb25fZGF0YSA8LSBhdHRyaXRpb25fZGF0YSAlPiVcbiAgc2VsZWN0KC13aGVyZShpcy5udW1lcmljKSkgJT4lXG4gIGJpbmRfY29scyhzY2FsZWRfbnVtZXJpY2FsKVxuXG4jIE9uZS1ob3QgZW5jb2RpbmcgZm9yIGNhdGVnb3JpY2FsIGNvbHVtbnNcbmF0dHJpdGlvbl9kYXRhIDwtIGF0dHJpdGlvbl9kYXRhICU+JVxuICBtdXRhdGUoYWNyb3NzKHdoZXJlKGlzLmZhY3RvciksIGFzLmNoYXJhY3RlcikpICU+JVxuICBwaXZvdF9sb25nZXIoY29scyA9IHdoZXJlKGlzLmNoYXJhY3RlciksIG5hbWVzX3RvID0gXCJ2YXJpYWJsZVwiLCB2YWx1ZXNfdG8gPSBcInZhbHVlXCIpICU+JVxuICBtdXRhdGUodmFsdWUgPSBhcy5mYWN0b3IodmFsdWUpKSAlPiVcbiAgcGl2b3Rfd2lkZXIobmFtZXNfZnJvbSA9IFwidmFsdWVcIiwgdmFsdWVzX2Zyb20gPSBcInZhbHVlXCIsIHZhbHVlc19mbiA9IGxlbmd0aCwgdmFsdWVzX2ZpbGwgPSAwKVxuXG4jIENvbnZlcnQgb25lLWhvdCBlbmNvZGVkIGNvbHVtbnMgdG8gZmFjdG9yc1xuYXR0cml0aW9uX2RhdGEgPC0gYXR0cml0aW9uX2RhdGEgJT4lXG4gIG11dGF0ZShhY3Jvc3Mod2hlcmUoaXMubnVtZXJpYyksIGFzLmZhY3RvcikpXG5gYGAifQ== -->
+<pre class="r"><code>scaled_numerical &lt;- predict(preprocess_params, attrition_data %&gt;% select(where(is.numeric)))
+
+# Add the scaled numerical columns back to the dataset
+attrition_data &lt;- attrition_data %&gt;%
+  select(-where(is.numeric)) %&gt;%
+  bind_cols(scaled_numerical)
+
+# One-hot encoding for categorical columns
+attrition_data &lt;- attrition_data %&gt;%
+  mutate(across(where(is.factor), as.character)) %&gt;%
+  pivot_longer(cols = where(is.character), names_to = &quot;variable&quot;, values_to = &quot;value&quot;) %&gt;%
+  mutate(value = as.factor(value)) %&gt;%
+  pivot_wider(names_from = &quot;value&quot;, values_from = &quot;value&quot;, values_fn = length, values_fill = 0)
+
+# Convert one-hot encoded columns to factors
+attrition_data &lt;- attrition_data %&gt;%
+  mutate(across(where(is.numeric), as.factor))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
+</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkdyb3VwIDggLSBJZGVudGlmeWluZyBBdHRyaXRpb24gaW4gRW1wbG95ZWVzIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KIyMgMC4gUHJlcmVxdWVzaXRzDQpgYGB7cn0NCmxpYnJhcnkoZHBseXIpDQpgYGANCg0KIyMgMS4gTG9hZCB0aGUgSUJNLURhdGFzZXQNCg0KTG9hZCB0aGUgZGF0YXNldCBhbmQgZ2V0IHNvbWUgYmFzaWMgZGVzY3JpcHRpb25zLg0KDQpgYGB7cn0NCmF0dHJpdGlvbl9kYXRhIDwtIHJlYWQuY3N2KCJEYXRhc2V0LUhSLUVtcGxveWVlLUF0dHJpdGlvbi5jc3YiKQ0Kc3RyKGF0dHJpdGlvbl9kYXRhKQ0KDQpgYGANCiMjIyBGaW5kIG91dCB0aGUgbnVtYmVyIG9mIG51bWVyaWNhbCBhbmQgY2F0ZWdvcmljYWwgZmVhdHVyZXMNCmBgYHtyfQ0KbnVtX251bWVyaWNhbCA8LSBzdW0oc2FwcGx5KGF0dHJpdGlvbl9kYXRhLCBpcy5udW1lcmljKSkNCm51bV9jYXRlZ29yaWNhbCA8LSBzdW0oc2FwcGx5KGF0dHJpdGlvbl9kYXRhLCBmdW5jdGlvbih4KSBpcy5mYWN0b3IoeCkgfHwgaXMuY2hhcmFjdGVyKHgpKSkNCg0KIyBQcmludCB0aGUgY291bnRzDQpjYXQoIk51bWJlciBvZiBudW1lcmljYWwgYXR0cmlidXRlczoiLCBudW1fbnVtZXJpY2FsLCAiIC8iLCAobnVtX251bWVyaWNhbC8obnVtX251bWVyaWNhbCtudW1fY2F0ZWdvcmljYWwpKSoxMDAsICIlXG4iKQ0KY2F0KCJOdW1iZXIgb2YgY2F0ZWdvcmljYWwgYXR0cmlidXRlczoiLCBudW1fY2F0ZWdvcmljYWwsICIgLyIsIChudW1fY2F0ZWdvcmljYWwvKG51bV9udW1lcmljYWwrbnVtX2NhdGVnb3JpY2FsKSkqMTAwLCAiJVxuIikNCmBgYA0KIyMjIEZpbmQgcG9zc2libGUgbWlzc2luZyB2YWx1ZXMNCmBgYHtyfQ0KIyBDaGVjayBmb3IgbWlzc2luZyB2YWx1ZXMgaW4gdGhlIGRhdGFzZXQNCm1pc3NpbmdfdmFsdWVzIDwtIHNhcHBseShhdHRyaXRpb25fZGF0YSwgZnVuY3Rpb24oeCkgc3VtKGlzLm5hKHgpKSkNCg0KIyBQcmludCBjb2x1bW5zIHdpdGggbWlzc2luZyB2YWx1ZXMNCm1pc3NpbmdfdmFsdWVzW21pc3NpbmdfdmFsdWVzID4gMF0NCmBgYA0KQWZ0ZXIgdGhpcyB3ZSBjYW4gY29uY2x1ZGUgdGhhdCB0aGVyZSBpcyBubyBtaXNzaW5nIGRhdGEgaW4gb3VyIGRhdGFzZXQuIA0KDQojIw0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkdyb3VwIDggLSBJZGVudGlmeWluZyBBdHRyaXRpb24gaW4gRW1wbG95ZWVzIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KIyMgMC4gUHJlcmVxdWVzaXRzDQpgYGB7cn0NCmluc3RhbGwucGFja2FnZXMoIm91dGxpZXJzIikNCmluc3RhbGwucGFja2FnZXMoInRpZHlyIikNCmluc3RhbGwucGFja2FnZXMoImNhcmV0IikNCmxpYnJhcnkoZHBseXIpDQpsaWJyYXJ5KHRpZHlyKQ0KbGlicmFyeShvdXRsaWVycykNCmxpYnJhcnkoY2FyZXQpDQpgYGANCg0KIyMgMS4gTG9hZCB0aGUgSUJNLURhdGFzZXQNCg0KTG9hZCB0aGUgZGF0YXNldCBhbmQgZ2V0IHNvbWUgYmFzaWMgZGVzY3JpcHRpb25zLg0KYGBge3J9DQphdHRyaXRpb25fZGF0YSA8LSByZWFkLmNzdigiRGF0YXNldC1IUi1FbXBsb3llZS1BdHRyaXRpb24uY3N2Iiwgc3RyaW5nc0FzRmFjdG9ycyA9IFRSVUUpDQpzdW1tYXJ5KGF0dHJpdGlvbl9kYXRhKQ0KYGBgDQojIyMgT3V0bGllciBEZXRlY3Rpb24gDQoNCmBgYHtyfQ0KIyBGdW5jdGlvbiB0byBkZXRlY3Qgb3V0bGllcnMgdXNpbmcgSVFSIG1ldGhvZA0KaXFyX291dGxpZXJzIDwtIGZ1bmN0aW9uKHgpIHsNCiAgUTEgPC0gcXVhbnRpbGUoeCwgMC4yNSwgbmEucm0gPSBUUlVFKQ0KICBRMyA8LSBxdWFudGlsZSh4LCAwLjc1LCBuYS5ybSA9IFRSVUUpDQogIElRUiA8LSBRMyAtIFExDQogIGxvd2VyX2JvdW5kIDwtIFExIC0gNCAqIElRUg0KICB1cHBlcl9ib3VuZCA8LSBRMyArIDQgKiBJUVINCiAgb3V0bGllcnMgPC0geCA8IGxvd2VyX2JvdW5kIHwgeCA+IHVwcGVyX2JvdW5kDQogIHJldHVybihvdXRsaWVycykNCn0NCg0KIyBBcHBseSB0aGUgSVFSIG91dGxpZXIgZGV0ZWN0aW9uIHRvIG51bWVyaWNhbCBjb2x1bW5zDQpudW1lcmljYWxfY29sdW1ucyA8LSBhdHRyaXRpb25fZGF0YSAlPiUgc2VsZWN0KHdoZXJlKGlzLm51bWVyaWMpKQ0KaXFyX291dGxpZXJzX3Jlc3VsdCA8LSBzYXBwbHkobnVtZXJpY2FsX2NvbHVtbnMsIGlxcl9vdXRsaWVycykNCg0KIyBDb3VudCB0aGUgbnVtYmVyIG9mIG91dGxpZXJzIGluIGVhY2ggY29sdW1uDQpvdXRsaWVyc19jb3VudCA8LSBjb2xTdW1zKGlxcl9vdXRsaWVyc19yZXN1bHQpDQoNCiMgUHJpbnQgdGhlIGNvdW50IG9mIG91dGxpZXJzIGZvciBlYWNoIG51bWVyaWNhbCBjb2x1bW4NCm91dGxpZXJzX2NvdW50DQoNCiMgQ29tYmluZSByZXN1bHRzIHdpdGggb3JpZ2luYWwgZGF0YSB0byBzaG93IHJvd3Mgd2l0aCBvdXRsaWVycw0KYXR0cml0aW9uX2RhdGFfd2l0aF9pcXJfb3V0bGllcnMgPC0gYXR0cml0aW9uX2RhdGEgJT4lDQogIG11dGF0ZShhY3Jvc3Mod2hlcmUoaXMubnVtZXJpYyksIGlxcl9vdXRsaWVycywgLm5hbWVzID0gIm91dGxpZXJfe2NvbH0iKSkNCg0KIyBGaWx0ZXIgcm93cyB3aXRoIGFueSBvdXRsaWVycw0Kcm93c193aXRoX2lxcl9vdXRsaWVycyA8LSBhdHRyaXRpb25fZGF0YV93aXRoX2lxcl9vdXRsaWVycyAlPiUNCiAgZmlsdGVyKGlmX2FueShzdGFydHNfd2l0aCgib3V0bGllcl8iKSwgfiAuID09IFRSVUUpKQ0KDQojIFByaW50IHRoZSBudW1iZXIgb2Ygcm93cyB3aXRoIGF0IGxlYXN0IG9uZSBvdXRsaWVyDQpudW1fcm93c193aXRoX291dGxpZXJzIDwtIG5yb3cocm93c193aXRoX2lxcl9vdXRsaWVycykNCmNhdCgiTnVtYmVyIG9mIHJvd3Mgd2l0aCBhdCBsZWFzdCBvbmUgb3V0bGllcjoiLCBudW1fcm93c193aXRoX291dGxpZXJzLCAiIC8gIiwgbnVtX3Jvd3Nfd2l0aF9vdXRsaWVycy8xNDcwKjEwMCwgIiUgXG4iKQ0KYGBgDQoNCmBgYHtyfQ0KIyBGdW5jdGlvbiB0byBkZXRlY3Qgb3V0bGllcnMgdXNpbmcgWi1zY29yZSBtZXRob2QNCnpfc2NvcmVfb3V0bGllcnMgPC0gZnVuY3Rpb24oeCwgdGhyZXNob2xkID0gNCkgew0KICB6X3Njb3JlcyA8LSBzY2FsZSh4KQ0KICBvdXRsaWVycyA8LSBhYnMoel9zY29yZXMpID4gdGhyZXNob2xkDQogIHJldHVybihvdXRsaWVycykNCn0NCg0KIyBBcHBseSB0aGUgWi1zY29yZSBvdXRsaWVyIGRldGVjdGlvbiB0byBudW1lcmljYWwgY29sdW1ucw0Kel9zY29yZV9vdXRsaWVyc19yZXN1bHQgPC0gc2FwcGx5KG51bWVyaWNhbF9jb2x1bW5zLCB6X3Njb3JlX291dGxpZXJzKQ0KDQojIENvdW50IHRoZSBudW1iZXIgb2Ygb3V0bGllcnMgaW4gZWFjaCBjb2x1bW4NCnpfb3V0bGllcnNfY291bnQgPC0gY29sU3Vtcyh6X3Njb3JlX291dGxpZXJzX3Jlc3VsdCkNCg0KIyBQcmludCB0aGUgY291bnQgb2Ygb3V0bGllcnMgZm9yIGVhY2ggbnVtZXJpY2FsIGNvbHVtbg0Kel9vdXRsaWVyc19jb3VudA0KDQojIENvbWJpbmUgcmVzdWx0cyB3aXRoIG9yaWdpbmFsIGRhdGEgdG8gc2hvdyByb3dzIHdpdGggb3V0bGllcnMNCmF0dHJpdGlvbl9kYXRhX3dpdGhfel9vdXRsaWVycyA8LSBhdHRyaXRpb25fZGF0YSAlPiUNCiAgbXV0YXRlKGFjcm9zcyh3aGVyZShpcy5udW1lcmljKSwgel9zY29yZV9vdXRsaWVycywgLm5hbWVzID0gIm91dGxpZXJfe2NvbH0iKSkNCg0KIyBGaWx0ZXIgcm93cyB3aXRoIGFueSBvdXRsaWVycw0Kcm93c193aXRoX3pfb3V0bGllcnMgPC0gYXR0cml0aW9uX2RhdGFfd2l0aF96X291dGxpZXJzICU+JQ0KICBmaWx0ZXIoaWZfYW55KHN0YXJ0c193aXRoKCJvdXRsaWVyXyIpLCB+IC4gPT0gVFJVRSkpDQoNCiMgUHJpbnQgdGhlIG51bWJlciBvZiByb3dzIHdpdGggYXQgbGVhc3Qgb25lIG91dGxpZXINCm51bV9yb3dzX3dpdGhfel9vdXRsaWVycyA8LSBucm93KHJvd3Nfd2l0aF96X291dGxpZXJzKQ0KY2F0KCJOdW1iZXIgb2Ygcm93cyB3aXRoIGF0IGxlYXN0IG9uZSBaLXNjb3JlIG91dGxpZXI6IiwgbnVtX3Jvd3Nfd2l0aF96X291dGxpZXJzLCAiIC8gIiwgbnVtX3Jvd3Nfd2l0aF96X291dGxpZXJzLzE0NzAqMTAwLCAiJSBcbiIpDQoNCiMgRGlzcGxheSByb3dzIHdpdGggb3V0bGllcnMNCnJvd3Nfd2l0aF96X291dGxpZXJzDQoNCmBgYA0KDQpXZSB3aWxsIHByb2NlZWQgd2l0aCBhbGwgZGF0YSBhcyBhIGNsb3NlciBsb29rIG9uIHRoZSBpZGVudGlmaWVkIG91dGxpZXJzIGJ5IHRoZSB6LVNjb3JlIG1ldGhvZCByZXZlYWxlZCBvbmx5IGhpZ2gsIGJ1dCByZWFzb25hYmxlIHllYXJzIG9mIHdvcmtpbmcgd2l0aCBvbmUgY29tcGFueS4NCg0KIyMjIFByZXByb2Nlc3NpbmcNCg0KV2Ugd2FudCB0byBzY2FsZSBvdXIgbnVtZXJpY2FsIGZlYXR1cmVzIHRvIGhhdmUgZXF1YWwgaW5mbHVlbmNlcyBvbiB0aGUgbW9kZWxzIGFuZCBlbmNvZGUgb3VyIGNhdGVnb3JpY2FsIGZlYXR1cmVzLg0KDQpgYGB7cn0NCiMgU2NhbGUgbnVtZXJpY2FsIGNvbHVtbnMNCnByZXByb2Nlc3NfcGFyYW1zIDwtIHByZVByb2Nlc3MoYXR0cml0aW9uX2RhdGEgJT4lIHNlbGVjdCh3aGVyZShpcy5udW1lcmljKSksIG1ldGhvZCA9IGMoImNlbnRlciIsICJzY2FsZSIpKQ0Kc2NhbGVkX251bWVyaWNhbCA8LSBwcmVkaWN0KHByZXByb2Nlc3NfcGFyYW1zLCBhdHRyaXRpb25fZGF0YSAlPiUgc2VsZWN0KHdoZXJlKGlzLm51bWVyaWMpKSkNCg0KIyBBZGQgdGhlIHNjYWxlZCBudW1lcmljYWwgY29sdW1ucyBiYWNrIHRvIHRoZSBkYXRhc2V0DQphdHRyaXRpb25fZGF0YSA8LSBhdHRyaXRpb25fZGF0YSAlPiUNCiAgc2VsZWN0KC13aGVyZShpcy5udW1lcmljKSkgJT4lDQogIGJpbmRfY29scyhzY2FsZWRfbnVtZXJpY2FsKQ0KDQojIE9uZS1ob3QgZW5jb2RpbmcgZm9yIGNhdGVnb3JpY2FsIGNvbHVtbnMNCmF0dHJpdGlvbl9kYXRhIDwtIGF0dHJpdGlvbl9kYXRhICU+JQ0KICBtdXRhdGUoYWNyb3NzKHdoZXJlKGlzLmZhY3RvciksIGFzLmNoYXJhY3RlcikpICU+JQ0KICBwaXZvdF9sb25nZXIoY29scyA9IHdoZXJlKGlzLmNoYXJhY3RlciksIG5hbWVzX3RvID0gInZhcmlhYmxlIiwgdmFsdWVzX3RvID0gInZhbHVlIikgJT4lDQogIG11dGF0ZSh2YWx1ZSA9IGFzLmZhY3Rvcih2YWx1ZSkpICU+JQ0KICBwaXZvdF93aWRlcihuYW1lc19mcm9tID0gInZhbHVlIiwgdmFsdWVzX2Zyb20gPSAidmFsdWUiLCB2YWx1ZXNfZm4gPSBsZW5ndGgsIHZhbHVlc19maWxsID0gMCkNCg0KIyBDb252ZXJ0IG9uZS1ob3QgZW5jb2RlZCBjb2x1bW5zIHRvIGZhY3RvcnMNCmF0dHJpdGlvbl9kYXRhIDwtIGF0dHJpdGlvbl9kYXRhICU+JQ0KICBtdXRhdGUoYWNyb3NzKHdoZXJlKGlzLm51bWVyaWMpLCBhcy5mYWN0b3IpKQ0KYGBgDQpgYGB7cn0NClZpZXcoYXR0cml0aW9uX2RhdGEpDQpgYGANCg0K</div>
 
 
 

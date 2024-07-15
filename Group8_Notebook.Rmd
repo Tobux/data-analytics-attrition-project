@@ -5,35 +5,121 @@ output: html_notebook
 
 ## 0. Prerequesits
 ```{r}
+install.packages("outliers")
+install.packages("tidyr")
+install.packages("caret")
 library(dplyr)
+library(tidyr)
+library(outliers)
+library(caret)
 ```
 
 ## 1. Load the IBM-Dataset
 
 Load the dataset and get some basic descriptions.
+```{r}
+attrition_data <- read.csv("Dataset-HR-Employee-Attrition.csv", stringsAsFactors = TRUE)
+summary(attrition_data)
+```
+### Outlier Detection 
 
 ```{r}
-attrition_data <- read.csv("Dataset-HR-Employee-Attrition.csv")
-str(attrition_data)
+# Function to detect outliers using IQR method
+iqr_outliers <- function(x) {
+  Q1 <- quantile(x, 0.25, na.rm = TRUE)
+  Q3 <- quantile(x, 0.75, na.rm = TRUE)
+  IQR <- Q3 - Q1
+  lower_bound <- Q1 - 4 * IQR
+  upper_bound <- Q3 + 4 * IQR
+  outliers <- x < lower_bound | x > upper_bound
+  return(outliers)
+}
 
+# Apply the IQR outlier detection to numerical columns
+numerical_columns <- attrition_data %>% select(where(is.numeric))
+iqr_outliers_result <- sapply(numerical_columns, iqr_outliers)
+
+# Count the number of outliers in each column
+outliers_count <- colSums(iqr_outliers_result)
+
+# Print the count of outliers for each numerical column
+outliers_count
+
+# Combine results with original data to show rows with outliers
+attrition_data_with_iqr_outliers <- attrition_data %>%
+  mutate(across(where(is.numeric), iqr_outliers, .names = "outlier_{col}"))
+
+# Filter rows with any outliers
+rows_with_iqr_outliers <- attrition_data_with_iqr_outliers %>%
+  filter(if_any(starts_with("outlier_"), ~ . == TRUE))
+
+# Print the number of rows with at least one outlier
+num_rows_with_outliers <- nrow(rows_with_iqr_outliers)
+cat("Number of rows with at least one outlier:", num_rows_with_outliers, " / ", num_rows_with_outliers/1470*100, "% \n")
 ```
-### Find out the number of numerical and categorical features
+
 ```{r}
-num_numerical <- sum(sapply(attrition_data, is.numeric))
-num_categorical <- sum(sapply(attrition_data, function(x) is.factor(x) || is.character(x)))
+# Function to detect outliers using Z-score method
+z_score_outliers <- function(x, threshold = 4) {
+  z_scores <- scale(x)
+  outliers <- abs(z_scores) > threshold
+  return(outliers)
+}
 
-# Print the counts
-cat("Number of numerical attributes:", num_numerical, " /", (num_numerical/(num_numerical+num_categorical))*100, "%\n")
-cat("Number of categorical attributes:", num_categorical, " /", (num_categorical/(num_numerical+num_categorical))*100, "%\n")
+# Apply the Z-score outlier detection to numerical columns
+z_score_outliers_result <- sapply(numerical_columns, z_score_outliers)
+
+# Count the number of outliers in each column
+z_outliers_count <- colSums(z_score_outliers_result)
+
+# Print the count of outliers for each numerical column
+z_outliers_count
+
+# Combine results with original data to show rows with outliers
+attrition_data_with_z_outliers <- attrition_data %>%
+  mutate(across(where(is.numeric), z_score_outliers, .names = "outlier_{col}"))
+
+# Filter rows with any outliers
+rows_with_z_outliers <- attrition_data_with_z_outliers %>%
+  filter(if_any(starts_with("outlier_"), ~ . == TRUE))
+
+# Print the number of rows with at least one outlier
+num_rows_with_z_outliers <- nrow(rows_with_z_outliers)
+cat("Number of rows with at least one Z-score outlier:", num_rows_with_z_outliers, " / ", num_rows_with_z_outliers/1470*100, "% \n")
+
+# Display rows with outliers
+rows_with_z_outliers
+
 ```
-### Find possible missing values
+
+We will proceed with all data as a closer look on the identified outliers by the z-Score method revealed only high, but reasonable years of working with one company.
+
+### Preprocessing
+
+We want to scale our numerical features to have equal influences on the models and encode our categorical features.
+
 ```{r}
-# Check for missing values in the dataset
-missing_values <- sapply(attrition_data, function(x) sum(is.na(x)))
+# Scale numerical columns
+preprocess_params <- preProcess(attrition_data %>% select(where(is.numeric)), method = c("center", "scale"))
+scaled_numerical <- predict(preprocess_params, attrition_data %>% select(where(is.numeric)))
 
-# Print columns with missing values
-missing_values[missing_values > 0]
+# Add the scaled numerical columns back to the dataset
+attrition_data <- attrition_data %>%
+  select(-where(is.numeric)) %>%
+  bind_cols(scaled_numerical)
+
+# One-hot encoding for categorical columns
+attrition_data <- attrition_data %>%
+  mutate(across(where(is.factor), as.character)) %>%
+  pivot_longer(cols = where(is.character), names_to = "variable", values_to = "value") %>%
+  mutate(value = as.factor(value)) %>%
+  pivot_wider(names_from = "value", values_from = "value", values_fn = length, values_fill = 0)
+
+# Convert one-hot encoded columns to factors
+attrition_data <- attrition_data %>%
+  mutate(across(where(is.numeric), as.factor))
 ```
-After this we can conclude that there is no missing data in our dataset. 
+```{r}
+View(attrition_data)
+```
 
-##
