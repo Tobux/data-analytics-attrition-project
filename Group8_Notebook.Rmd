@@ -1,0 +1,39 @@
+---
+title: "Group 8 - Identifying Attrition in Employees"
+output: html_notebook
+---
+
+## 0. Prerequesits
+```{r}
+library(dplyr)
+```
+
+## 1. Load the IBM-Dataset
+
+Load the dataset and get some basic descriptions.
+
+```{r}
+attrition_data <- read.csv("Dataset-HR-Employee-Attrition.csv")
+str(attrition_data)
+
+```
+### Find out the number of numerical and categorical features
+```{r}
+num_numerical <- sum(sapply(attrition_data, is.numeric))
+num_categorical <- sum(sapply(attrition_data, function(x) is.factor(x) || is.character(x)))
+
+# Print the counts
+cat("Number of numerical attributes:", num_numerical, " /", (num_numerical/(num_numerical+num_categorical))*100, "%\n")
+cat("Number of categorical attributes:", num_categorical, " /", (num_categorical/(num_numerical+num_categorical))*100, "%\n")
+```
+### Find possible missing values
+```{r}
+# Check for missing values in the dataset
+missing_values <- sapply(attrition_data, function(x) sum(is.na(x)))
+
+# Print columns with missing values
+missing_values[missing_values > 0]
+```
+After this we can conclude that there is no missing data in our dataset. 
+
+##
