@@ -21,6 +21,26 @@ Load the dataset and get some basic descriptions.
 attrition_data <- read.csv("Dataset-HR-Employee-Attrition.csv", stringsAsFactors = TRUE)
 summary(attrition_data)
 ```
+### Correlation Matrix
+```{r}
+install.packages("corrplot")
+library(corrplot)
+```
+
+```{r, fig.width=10, fig.height=10}
+# Identify numeric columns
+numeric_cols <- sapply(attrition_data, is.numeric)
+
+# Create a new dataset with only numeric columns
+numeric_data <- attrition_data[, numeric_cols]
+
+# Compute the correlation matrix
+cor_matrix <- cor(numeric_data)
+
+# Plot the correlation matrix
+corrplot(cor_matrix, method = "circle", tl.cex = 0.5)
+```
+
 ### Outlier Detection 
 
 ```{r}
