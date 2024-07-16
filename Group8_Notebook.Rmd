@@ -421,6 +421,60 @@ for (model_name in names(results)) {
 # Display evaluation results
 evaluation_results
 ```
+
+```{r}
+#install.packages("car")
+library(car)
+
+# Retrieve the trained GLM model from the results list
+glm_model <- results[["glm"]]
+
+# Extract the final fitted model from the caret object
+fitted_glm_model <- glm_model$finalModel
+
+# Compute VIF values
+vif_values <- vif(fitted_glm_model)
+
+# Print VIF values
+print(vif_values)
+```
+
+As we can see there is a perfect multicollinearity issue because of the variables Joblevel and MonthlyIncome.
+Therefore we need to drop them and retrain and evaluate the glm model.
+
+```{r}
+# Drop JobLevel and MonthlyIncome from the training data
+train_data_balanced <- train_data_balanced[, !(names(train_data_balanced) %in% c("JobLevel", "MonthlyIncome"))]
+test_data <- test_data[, !(names(test_data) %in% c("JobLevel", "MonthlyIncome"))]
+
+# Perform nested cross-validation again (focusing on glm for illustration)
+results_glm <- train(
+  Class ~ .,  # Use all remaining predictors after excluding specified ones
+  data = train_data_balanced,
+  method = models[["glm"]],
+  trControl = outer_cv,
+  metric = "Recall"
+)
+
+# Compute the predictions and evaluations as before
+predictions_glm <- predict(results_glm, newdata = test_data)
+probabilities_glm <- predict(results_glm, newdata = test_data, type = "prob")[, 2]
+
+# Confusion matrix for glm
+cm_glm <- confusionMatrix(predictions_glm, test_data$Attrition, positive = "Yes")
+print("Confusion Matrix for glm")
+print(cm_glm)
+
+# ROC curve for glm
+roc_curve_glm <- roc(test_data$Attrition, probabilities_glm, levels = c("No", "Yes"), direction = "<")
+print("AUC for glm")
+print(auc(roc_curve_glm))
+
+# Plot ROC curve for glm
+plot(roc_curve_glm, main = "ROC Curve for glm")
+```
+
+
 ### Ensemble Learning to further improve Recall
 ```{r}
 # Install and load required packages
