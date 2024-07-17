@@ -29,7 +29,7 @@ summary(attrition_data)
 ```
 ### Correlation Matrix
 ```{r}
-install.packages("corrplot")
+#install.packages("corrplot")
 library(corrplot)
 ```
 
@@ -164,6 +164,45 @@ colnames(train_data) <- make.names(colnames(train_data))
 colnames(test_data) <- make.names(colnames(test_data))
 
 ```
+
+### Odds ratio
+
+```{r}
+# Convert the target variable to binary
+attrition_data$Attrition <- ifelse(attrition_data$Attrition == "Yes", 1, 0)
+
+# Select relevant features for the regression model
+features <- c("Age", "DistanceFromHome", "MonthlyIncome", "TotalWorkingYears")
+
+
+formula <- as.formula(paste("Attrition ~", paste(features, collapse = " + ")))
+
+
+model <- lm(formula, data = attrition_data)
+
+summary(model)
+```
+```{r}
+logistic_model <- glm(Attrition ~ Age + DistanceFromHome + MonthlyIncome + TotalWorkingYears, 
+                      data = attrition_data, 
+                      family = binomial)
+
+
+odds_ratios <- exp(cbind(OR = coef(logistic_model), confint(logistic_model)))
+odds_ratios
+```
+```{r}
+attrition_data <- attrition_data %>%
+  mutate(Odds_Ratio_Age = odds_ratios["Age", "OR"],
+         Odds_Ratio_DistanceFromHome = odds_ratios["DistanceFromHome", "OR"],
+         Odds_Ratio_MonthlyIncome = odds_ratios["MonthlyIncome", "OR"],
+         Odds_Ratio_TotalWorkingYears = odds_ratios["TotalWorkingYears", "OR"])
+
+# Display the first few rows of the updated dataset
+head(attrition_data)
+```
+
+
 
 ### Nested Cross-Validation and Hyperparameter-Tuning (based on Accuracy)
 
