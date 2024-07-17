@@ -473,6 +473,16 @@ print(auc(roc_curve_glm))
 # Plot ROC curve for glm
 plot(roc_curve_glm, main = "ROC Curve for glm")
 ```
+```{r}
+# Extract the final glm model object from the caret train results
+final_glm_model <- results_glm$finalModel
+
+# Compute VIF values
+vif_values <- vif(final_glm_model)
+
+# Print VIF values
+print(vif_values)
+```
 
 
 ### Ensemble Learning to further improve Recall
