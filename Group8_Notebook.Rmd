@@ -440,12 +440,13 @@ print(vif_values)
 ```
 
 As we can see there is a perfect multicollinearity issue because of the variables Joblevel and MonthlyIncome.
+Also BusinessTravelTravel_Rarely  and BusinessTravelTravel_Frequently have a perfect multicollinearity correlation.
 Therefore we need to drop them and retrain and evaluate the glm model.
 
 ```{r}
 # Drop JobLevel and MonthlyIncome from the training data
-train_data_balanced <- train_data_balanced[, !(names(train_data_balanced) %in% c("JobLevel", "MonthlyIncome"))]
-test_data <- test_data[, !(names(test_data) %in% c("JobLevel", "MonthlyIncome"))]
+train_data_balanced <- train_data_balanced[, !(names(train_data_balanced) %in% c("JobLevel", "MonthlyIncome", "BusinessTravelTravel_Rarely","BusinessTravelTravel_Frequently"))]
+test_data <- test_data[, !(names(test_data) %in% c("JobLevel", "MonthlyIncome", "BusinessTravelTravel_Rarely","BusinessTravelTravel_Frequently"))]
 
 # Perform nested cross-validation again (focusing on glm for illustration)
 results_glm <- train(
@@ -470,12 +471,17 @@ roc_curve_glm <- roc(test_data$Attrition, probabilities_glm, levels = c("No", "Y
 print("AUC for glm")
 print(auc(roc_curve_glm))
 
+# F1 score
+f1_score_glm <- F_meas(data = predictions_glm, reference = test_data$Attrition, positive = "Yes") 
+print(paste("F1-Score for glm:", f1_score_glm))
+
 # Plot ROC curve for glm
 plot(roc_curve_glm, main = "ROC Curve for glm")
 ```
 ```{r}
 # Extract the final glm model object from the caret train results
 final_glm_model <- results_glm$finalModel
+alias(final_glm_model)
 
 # Compute VIF values
 vif_values <- vif(final_glm_model)
